@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud Recibida | Simple Invest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gracias-section {
+            padding: 10rem 0 6rem 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gracias-container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 5rem 3rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .gracias-icon {
+            font-size: 4rem;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+        }
+
+        .gracias-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gracias-text {
+            color: var(--color-gray);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 600px) {
+            .gracias-container {
+                padding: 3rem 1.5rem;
+            }
+            .gracias-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body class="theme-dark">
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="si-logo-trans.png" alt="Simple Invest" style="height: 35px; width: auto;">
+                <span class="logo-text" style="margin-left: 10px;">SIMPLE INVEST</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- MAIN SECTION -->
+    <section class="gracias-section section-dark">
+        <div class="container fade-in-up">
+            <div class="gracias-container">
+                <div class="gracias-icon">✓</div>
+                <h1 class="gracias-title">Gracias por contactarnos</h1>
+                <p class="gracias-text" style="white-space: pre-line;">Tu solicitud está en manos de nuestro equipo. Muy pronto un asesor especializado se comunicará telefónicamente contigo para brindarte toda la información.</p>
+                <a href="https://www.simple-invest.com" class="btn-primary" style="display: inline-flex; justify-content: center; min-width: 250px; text-decoration: none; padding: 1rem 2rem;">Volver a https://www.simple-invest.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="global-footer section-dark" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; padding-bottom: 2rem; margin-top: auto;">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top: 0; padding-top: 0; border-top: none; justify-content: center;">
+                <div class="footer-logo" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <img src="si-logo-trans.png" alt="Simple Invest" style="height: 30px; width: auto;">
+                    <span class="logo-text">SIMPLE INVEST</span>
+                </div>
+            </div>
+            <div class="footer-legal" style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem;">
+                <a href="politica-de-privacidad.html" style="color: var(--color-gray); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--color-gray)'">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

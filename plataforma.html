@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Invest | Plataforma VektorCap</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <meta name="description" content="Descubra VektorCap, la plataforma de inversión premium elegida por Simple Invest. Opere más de 300 instrumentos con tecnología Sirix y regulación FSCA.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css?v=2.1">
+
+    <style>
+        /* Unique Platform Page Styles */
+        .platform-hero {
+            position: relative;
+            padding-top: 180px;
+            padding-bottom: 120px;
+            background-color: var(--color-navy);
+            overflow: hidden;
+        }
+
+        .vector-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(176, 155, 113, 0.15) 0%, transparent 80%),
+                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .glowing-radar {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(176, 155, 113, 0.05) 0%, transparent 70%);
+            top: 20%;
+            right: -10%;
+            animation: radarPulse 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes radarPulse {
+            0% { transform: scale(0.9); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.9; }
+            100% { transform: scale(0.9); opacity: 0.5; }
+        }
+
+        .hero-mockup-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: rgba(17, 19, 22, 0.85);
+            border: 1px solid rgba(176, 155, 113, 0.3);
+            border-radius: 12px;
+            padding: 10px 16px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 5;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-badge:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+        }
+
+        .badge-1 {
+            top: 15%;
+            left: -15%;
+            animation: floatSlow 4s ease-in-out infinite alternate;
+        }
+
+        .badge-2 {
+            bottom: 25%;
+            right: -10%;
+            animation: floatSlow 5s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes floatSlow {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-12px); }
+        }
+
+        .badge-value {
+            font-weight: 700;
+            color: #10b981;
+        }
+
+        .badge-value.down {
+            color: #ef4444;
+        }
+
+        /* Stats Grid Section */
+        .platform-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(176, 155, 113, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .stat-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .stat-num {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+            background: linear-gradient(135deg, #fff 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Mock Trading Terminal Section */
+        .terminal-section {
+            background: var(--color-black);
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .terminal-container {
+            background: #0d0e12;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            overflow: hidden;
+            width: 100%;
+            margin-top: 4rem;
+        }
+
+        .terminal-header {
+            background: #14171e;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .terminal-title {
+            font-size: 0.8rem;
+            font-family: monospace;
+            color: var(--color-muted);
+            letter-spacing: 1px;
+        }
+
+        .terminal-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-family: monospace;
+            color: #10b981;
+        }
+
+        .status-pulse {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: statusGlow 1.5s infinite;
+        }
+
+        @keyframes statusGlow {
+            0% { opacity: 0.3; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.3; transform: scale(0.9); }
+        }
+
+        .terminal-body {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            height: 450px;
+            font-family: monospace;
+        }
+
+        @media (max-width: 900px) {
+            .terminal-body {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .terminal-sidebar {
+                border-left: none !important;
+                border-top: 1px solid rgba(255,255,255,0.05);
+                padding: 1.5rem !important;
+            }
+        }
+
+        .terminal-chart-area {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .chart-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            padding-bottom: 0.8rem;
+        }
+
+        .chart-stat-item span {
+            color: var(--color-muted);
+        }
+
+        .chart-stat-item strong {
+            color: #fff;
+            margin-left: 5px;
+        }
+
+        .simulated-chart {
+            flex-grow: 1;
+            display: flex;
+            align-items: flex-end;
+            gap: 6px;
+            height: 250px;
+            padding-bottom: 20px;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-left: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .chart-grid-line {
+            position: absolute;
+            left: 0; width: 100%; height: 1px;
+            background: rgba(255,255,255,0.02);
+            pointer-events: none;
+        }
+
+        .candle {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 100%;
+        }
+
+        .candle-wick {
+            width: 1px;
+            background: currentColor;
+            position: absolute;
+        }
+
+        .candle-body {
+            width: 10px;
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        .candle.bullish {
+            color: #10b981;
+        }
+
+        .candle.bearish {
+            color: #ef4444;
+        }
+
+        .terminal-sidebar {
+            background: #101216;
+            border-left: 1px solid rgba(255,255,255,0.05);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .order-book-title {
+            font-size: 0.85rem;
+            color: var(--color-light);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .order-book-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            margin-bottom: 6px;
+        }
+
+        .order-book-row.ask { color: #ef4444; }
+        .order-book-row.bid { color: #10b981; }
+
+        .terminal-actions {
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 1.5rem;
+        }
+
+        .term-btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-family: monospace;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .term-btn-buy {
+            background: #10b981;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .term-btn-buy:hover { background: #059669; }
+
+        /* Security Pillar Cards */
+        .security-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .security-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.03) 100%);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .security-card:hover {
+            border-color: var(--color-accent);
+            background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.05) 100%);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .security-icon {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Timeline / Steps */
+        .steps-container {
+            position: relative;
+            max-width: 900px;
+            margin: 4rem auto 0 auto;
+        }
+
+        .steps-timeline {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: rgba(255,255,255,0.05);
+            transform: translateX(-50%);
+        }
+
+        .steps-timeline-glow {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            height: 0%;
+            background: linear-gradient(to bottom, transparent, var(--color-accent), transparent);
+            transform: translateX(-50%);
+            animation: timelineGlow 4s linear infinite;
+        }
+
+        @keyframes timelineGlow {
+            0% { height: 0%; top: 0%; }
+            100% { height: 100%; top: 0%; }
+        }
+
+        .step-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+            width: 100%;
+        }
+
+        .step-block:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .step-content-box {
+            width: 45%;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            padding: 2rem;
+            border-radius: 12px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .step-block:hover .step-content-box {
+            border-color: rgba(176,155,113,0.3);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .step-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-black);
+            border: 4px solid rgba(255,255,255,0.2);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            transition: all 0.3s;
+        }
+
+        .step-block:hover .step-dot {
+            border-color: var(--color-accent);
+            background: var(--color-accent);
+            box-shadow: 0 0 15px var(--color-accent);
+        }
+
+        .step-number {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+            font-family: monospace;
+        }
+
+        @media (max-width: 768px) {
+            .steps-timeline { left: 20px; }
+            .steps-timeline-glow { left: 20px; }
+            .step-block {
+                flex-direction: row !important;
+                margin-bottom: 3rem;
+            }
+            .step-content-box {
+                width: calc(100% - 50px);
+                margin-left: 40px;
+            }
+            .step-dot {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="si-logo-trans.png" alt="Simple Invest" style="height: 35px; width: auto;">
+                <span class="logo-text">SIMPLE INVEST</span>
+            </a>
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">INICIO</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fondoia.html" class="dropdown-item">FONDO DE IA</a></li>
+                        <li><a href="fondo2026.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
+                        <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
+                        <li><a href="oro.html" class="dropdown-item">ORO</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="plataforma.html" class="nav-link active">PLATAFORMA</a></li>
+                <li class="nav-item"><a href="index.html#servicios" class="nav-link">SERVICIOS</a></li>
+                <li class="nav-item"><a href="apertura.html" class="nav-link">APERTURA</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="platform-hero">
+        <div class="vector-grid-bg"></div>
+        <div class="glowing-radar"></div>
+        
+        <div class="container two-column-grid hero-grid" style="position: relative; z-index: 2;">
+            <div class="hero-text fade-in-up">
+                <p class="hero-supporting">TECNOLOGÍA DE VANGUARDIA</p>
+                <h1 class="hero-title" style="font-size: clamp(2.3rem, 4.5vw, 3.8rem); line-height: 1.25;">PLATAFORMA VEKTORCAP:<br>TRANSFORMAMOS OPORTUNIDADES EN GANANCIAS.</h1>
+                <p class="hero-subheadline" style="color: var(--color-muted); margin-bottom: 2.5rem;">Simple Invest opera exclusivamente a través de la infraestructura avanzada de VektorCap, brindando acceso directo a los mercados globales con ejecución instantánea y seguridad garantizada.</p>
+                <div class="hero-actions">
+                    <a href="#proceso" class="btn-primary">Descubrir Cómo Comenzar</a>
+                </div>
+            </div>
+            
+            <div class="col-visual fade-in-up delay-1" style="display: flex; align-items: center; justify-content: center;">
+                <div class="hero-mockup-wrap">
+                    <!-- Floating Widgets -->
+                    <div class="floating-badge badge-1">
+                        <div style="width: 8px; height: 8px; background: #10b981; border-radius: 50%;"></div>
+                        <span style="font-family: monospace; font-size: 0.8rem; color: #fff;">NVIDIA (NVDA)</span>
+                        <strong class="badge-value">+4.82%</strong>
+                    </div>
+                    
+                    <div class="floating-badge badge-2">
+                        <div style="width: 8px; height: 8px; background: #ef4444; border-radius: 50%;"></div>
+                        <span style="font-family: monospace; font-size: 0.8rem; color: #fff;">ORO (XAU)</span>
+                        <strong class="badge-value down">-0.24%</strong>
+                    </div>
+
+                    <img src="vektorcap-mockup.png" alt="VektorCap App Interface" class="phone-image" style="width: 100%; max-width: 420px; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section class="section-charcoal border-top">
+        <div class="container fade-in-up">
+            <div class="two-column-grid" style="align-items: center; gap: 4rem;">
+                <div class="col-visual">
+                    <img src="about-img.png" alt="Sobre VektorCap" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                </div>
+                <div class="col-text">
+                    <p class="hero-supporting" style="margin-bottom: 1rem;">¿QUIÉNES SOMOS?</p>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Democratizando el acceso a las grandes inversiones</h2>
+                    <p style="color: var(--color-muted); margin-bottom: 1.5rem; font-size: 1.05rem;">En VektorCap somos una plataforma de inversión enfocada en ayudarte a alcanzar la libertad financiera que deseas. Desde 2024, trabajamos para acercar el mercado financiero y los grandes líderes globales a todos los países asociados en Latinoamérica.</p>
+                    <p style="color: var(--color-muted); font-size: 1.05rem;">Nuestra meta es ofrecerte una experiencia totalmente personalizada, utilizando tecnología de punta y un equipo de especialistas con amplia trayectoria en el mundo financiero. Con acceso a los mercados principales, te brindamos herramientas para resguardar y expandir tu patrimonio.</p>
+                </div>
+            </div>
+
+            <!-- Counters -->
+            <div class="platform-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-num" data-target="300">+300</div>
+                    <h4 style="color: #fff; margin-bottom: 0.5rem; font-weight: 500;">Instrumentos Activos</h4>
+                    <p style="color: var(--color-muted); font-size: 0.9rem;">Acciones, metales, criptomonedas, índices y más.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">24/7</div>
+                    <h4 style="color: #fff; margin-bottom: 0.5rem; font-weight: 500;">Soporte Multilingüe</h4>
+                    <p style="color: var(--color-muted); font-size: 0.9rem;">Atención y acompañamiento personalizado permanente.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">100%</div>
+                    <h4 style="color: #fff; margin-bottom: 0.5rem; font-weight: 500;">Cuentas Segregadas</h4>
+                    <p style="color: var(--color-muted); font-size: 0.9rem;">Garantía de protección de fondos bajo estricta regulación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERMINAL SIRIX -->
+    <section class="terminal-section border-top">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">Nuestra Tecnología de Negociación: Sirix</h2>
+            <p class="text-center" style="max-width: 800px; margin: 1.5rem auto 0 auto; color: var(--color-muted); font-size: 1.1rem;">VektorCap integra la prestigiosa plataforma Sirix, diseñada para proporcionar una experiencia de trading intuitiva, ágil y altamente analítica. Acceda a gráficos en tiempo real, ejecución en un clic y herramientas de análisis técnico avanzado.</p>
+            
+            <!-- Trading Simulator Wrapper -->
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <div class="terminal-dot dot-red"></div>
+                        <div class="terminal-dot dot-yellow"></div>
+                        <div class="terminal-dot dot-green"></div>
+                    </div>
+                    <div class="terminal-title">VEKTORCAP SIRIX WEBTRADER v3.4.1</div>
+                    <div class="terminal-status">
+                        <div class="status-pulse"></div>
+                        <span>LIVE STREAMING</span>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <!-- Chart area -->
+                    <div class="terminal-chart-area">
+                        <div class="chart-stats">
+                            <div class="chart-stat-item">
+                                <span>Activo:</span> <strong style="color: var(--color-accent);">BTC/USD</strong>
+                            </div>
+                            <div class="chart-stat-item">
+                                <span>Precio:</span> <strong id="live-btc-price" style="color: #10b981;">$96,420.50</strong>
+                            </div>
+                            <div class="chart-stat-item">
+                                <span>Spread:</span> <strong style="color: #fff;">0.2 pips</strong>
+                            </div>
+                        </div>
+
+                        <!-- Simulated candle charts -->
+                        <div class="simulated-chart" id="candle-chart-container">
+                            <div class="chart-grid-line" style="bottom: 20%;"></div>
+                            <div class="chart-grid-line" style="bottom: 40%;"></div>
+                            <div class="chart-grid-line" style="bottom: 60%;"></div>
+                            <div class="chart-grid-line" style="bottom: 80%;"></div>
+                            
+                            <!-- 10 simulated candles will load here via JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Sidebar order book -->
+                    <div class="terminal-sidebar">
+                        <div>
+                            <div class="order-book-title">Libro de Órdenes</div>
+                            
+                            <div style="border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+                                <div class="order-book-row ask"><span>96,428.10</span> <span>0.42 BTC</span></div>
+                                <div class="order-book-row ask"><span>96,425.40</span> <span>1.15 BTC</span></div>
+                                <div class="order-book-row ask"><span>96,422.90</span> <span>0.88 BTC</span></div>
+                            </div>
+                            
+                            <div>
+                                <div class="order-book-row bid"><span>96,419.20</span> <span>1.05 BTC</span></div>
+                                <div class="order-book-row bid"><span>96,416.50</span> <span>0.34 BTC</span></div>
+                                <div class="order-book-row bid"><span>96,414.00</span> <span>2.51 BTC</span></div>
+                            </div>
+                        </div>
+
+                        <div class="terminal-actions">
+                            <button class="term-btn term-btn-buy" onclick="window.location.href='apertura.html'">Comprar / Operar</button>
+                            <div style="font-size: 0.65rem; color: var(--color-muted); text-align: center; margin-top: 8px;">Ejecución promedio: 0.05 ms</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MERCADOS -->
+    <section class="section-charcoal border-top">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">Nuestros Mercados Principales</h2>
+            <p class="text-center" style="color: var(--color-muted); max-width: 700px; margin: 1rem auto 3rem auto;">Acceda a una amplia gama de mercados globales con spreads competitivos y apalancamiento flexible adaptado a sus necesidades.</p>
+            
+            <div class="platform-stats-grid">
+                <div class="stat-card" style="text-align: left;">
+                    <div class="security-icon">📊</div>
+                    <h3 style="color: #fff; margin-bottom: 1rem;">Acciones</h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6;">Invierta en compañías líderes del mundo (Apple, Tesla, Microsoft, NVIDIA) con CFDs, aprovechando los movimientos del mercado sin tener que comprar acciones directamente.</p>
+                </div>
+                
+                <div class="stat-card" style="text-align: left;">
+                    <div class="security-icon">⚜️</div>
+                    <h3 style="color: #fff; margin-bottom: 1rem;">Metales</h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6;">Diversifique su cartera accediendo a oro, plata y otros metales preciosos considerados activos de refugio de valor histórico con spreads competitivos.</p>
+                </div>
+
+                <div class="stat-card" style="text-align: left;">
+                    <div class="security-icon">🛢️</div>
+                    <h3 style="color: #fff; margin-bottom: 1rem;">Energías</h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6;">Opere con materias primas críticas como el petróleo y el gas natural a través de estrategias dinámicas de inversión adaptadas al ciclo económico mundial.</p>
+                </div>
+
+                <div class="stat-card" style="text-align: left;">
+                    <div class="security-icon">💱</div>
+                    <h3 style="color: #fff; margin-bottom: 1rem;">Divisas (Forex)</h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6;">Con más de 70 pares de divisas disponibles, participe del mercado de mayor liquidez global y aproveche la volatilidad con apalancamiento a su medida.</p>
+                </div>
+
+                <div class="stat-card" style="text-align: left;">
+                    <div class="security-icon">🪙</div>
+                    <h3 style="color: #fff; margin-bottom: 1rem;">Criptomonedas</h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6;">Adéntrese en el ecosistema cripto líder operando CFD sobre Bitcoin, Ethereum y otras monedas digitales principales las 24 horas del día.</p>
+                </div>
+
+                <div class="stat-card" style="text-align: left;">
+                    <div class="security-icon">📈</div>
+                    <h3 style="color: #fff; margin-bottom: 1rem;">Índices</h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6;">Opere CFDs sobre los índices bursátiles más representativos de la economía global, tales como el S&P 500, Nasdaq 100, DAX 30 y FTSE 100.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGULACION -->
+    <section class="section-dark border-top">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">Regulación y Respaldo Institucional</h2>
+            <p class="text-center" style="max-width: 800px; margin: 1.5rem auto 0 auto; color: var(--color-muted); font-size: 1.1rem;">VektorCap opera de manera transparente bajo la marca <strong>Grand Capital (PTY) LTD</strong>, un proveedor de servicios financieros (FSP) de Sudáfrica autorizado y regulado por la <strong>Financial Sector Conduct Authority (FSCA)</strong> con número de licencia <strong>FSP 54203</strong>.</p>
+            
+            <div class="security-pillars">
+                <div class="security-card">
+                    <div class="security-icon">🛡️</div>
+                    <h3 style="color: #fff; margin-bottom: 1rem; font-weight: 600;">Segregación de Fondos</h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.7;">Por requerimientos del regulador FSCA, todos los fondos de los clientes se custodian en cuentas bancarias totalmente segregadas de las cuentas operativas de la compañía. Su capital está estrictamente resguardado.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">🤝</div>
+                    <h3 style="color: #fff; margin-bottom: 1rem; font-weight: 600;">Protección al Inversor</h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.7;">El marco de supervisión sudafricano proporciona a todos los inversores un esquema que asegura la transparencia de las transacciones y la absoluta integridad de los depósitos efectuados.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">🔎</div>
+                    <h3 style="color: #fff; margin-bottom: 1rem; font-weight: 600;">Supervisión Constante</h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.7;">Sometida a auditorías financieras y de cumplimiento periódicas por la FSCA, la plataforma garantiza el estricto apego a las normativas de solvencia y conducta comercial internacionales.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 4rem; text-align: center; padding: 2rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); border-radius: 8px;">
+                <p style="font-size: 0.9rem; color: var(--color-muted); line-height: 1.6;"><strong>Información Legal de Registro:</strong> Vektor Cap es una marca operada por Grand Capital (PTY) LTD, una empresa constituida conforme a las leyes de Sudáfrica, con número de registro 2024/240728/07, autorizada y regulada por la FSCA de Sudáfrica con número de licencia FSP 54203.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PASO A PASO -->
+    <section id="proceso" class="section-charcoal border-top" style="padding-bottom: 10rem;">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">Cómo comenzar en VektorCap</h2>
+            <p class="text-center" style="color: var(--color-muted); max-width: 600px; margin: 1rem auto 0 auto;">Una guía práctica y sencilla diseñada para guiarle paso a paso en el despliegue de sus inversiones.</p>
+
+            <div class="steps-container">
+                <div class="steps-timeline">
+                    <div class="steps-timeline-glow"></div>
+                </div>
+
+                <!-- Paso 1 -->
+                <div class="step-block">
+                    <div class="step-dot"></div>
+                    <div class="step-content-box">
+                        <div class="step-number">PASO 01</div>
+                        <h4 style="color:#fff; margin-bottom: 0.5rem;">Inicio de Cuenta</h4>
+                        <p style="color: var(--color-muted); font-size: 0.9rem; line-height: 1.6;">Inicie sesión en el portal seguro de VektorCap utilizando las credenciales provistas al momento de su registro.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-block">
+                    <div class="step-dot"></div>
+                    <div class="step-content-box">
+                        <div class="step-number">PASO 02</div>
+                        <h4 style="color:#fff; margin-bottom: 0.5rem;">Área de Depósitos</h4>
+                        <p style="color: var(--color-muted); font-size: 0.9rem; line-height: 1.6;">Diríjase a la sección de transferencias y depósitos del menú central de la plataforma.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-block">
+                    <div class="step-dot"></div>
+                    <div class="step-content-box">
+                        <div class="step-number">PASO 03</div>
+                        <h4 style="color:#fff; margin-bottom: 0.5rem;">Monto a Invertir</h4>
+                        <p style="color: var(--color-muted); font-size: 0.9rem; line-height: 1.6;">Defina el capital en USD que desea incorporar al fondo (inversión accesible a partir de USD 200).</p>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="step-block">
+                    <div class="step-dot"></div>
+                    <div class="step-content-box">
+                        <div class="step-number">PASO 04</div>
+                        <h4 style="color:#fff; margin-bottom: 0.5rem;">Selección Bancaria</h4>
+                        <p style="color: var(--color-muted); font-size: 0.9rem; line-height: 1.6;">Elija el banco custodio e institucional de su preferencia listado en la pantalla de depósitos.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="step-block">
+                    <div class="step-dot"></div>
+                    <div class="step-content-box">
+                        <div class="step-number">PASO 05</div>
+                        <h4 style="color:#fff; margin-bottom: 0.5rem;">Transferencia Bancaria</h4>
+                        <p style="color: var(--color-muted); font-size: 0.9rem; line-height: 1.6;">Realice la transferencia bancaria local o internacional siguiendo las instrucciones mostradas.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 6 -->
+                <div class="step-block">
+                    <div class="step-dot"></div>
+                    <div class="step-content-box">
+                        <div class="step-number">PASO 06</div>
+                        <h4 style="color:#fff; margin-bottom: 0.5rem;">Validación con Asesor</h4>
+                        <p style="color: var(--color-muted); font-size: 0.9rem; line-height: 1.6;">Envíe el comprobante de transferencia a su asesor patrimonial designado para la inmediata liquidación de su posición.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="closing section-navy text-center border-top" style="padding: 8rem 0;">
+        <div class="container fade-in-up">
+            <p class="hero-supporting">EMPIECE HOY MISMO</p>
+            <h2 class="section-title" style="font-size: 3rem; margin-bottom: 1.5rem;">El momento de tomar el control es ahora.</h2>
+            <p style="color: var(--color-muted); font-size: 1.25rem; max-width: 600px; margin: 0 auto 3rem auto;">Inicie su proceso de apertura de cuenta y comience a operar respaldado por la mejor tecnología.</p>
+            <a href="apertura.html" class="btn-primary" style="margin: 0 auto; display: inline-block;">Abrir Cuenta Institucional</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="global-footer section-dark border-top">
+        <div class="container fade-in-up">
+            <div class="footer-contact-grid" style="grid-template-columns: 1fr; justify-items: center; max-width: 400px; margin: 0 auto;">
+                <!-- Colombia -->
+                <a href="tel:+5717085340" class="contact-card" style="width: 100%; max-width: 300px;">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-country">🇨🇴 Colombia</div>
+                    <div class="contact-number">+57 1 708 5340</div>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="si-logo-trans.png" alt="Simple Invest" style="height: 30px; width: auto;">
+                    <span class="logo-text">SIMPLE INVEST</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#servicios">Servicios</a>
+                    <a href="ia.html">IA</a>
+                    <a href="spacex.html">SpaceX</a>
+                    <a href="plataforma.html">Plataforma</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+            </div>
+            <div class="footer-legal" style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem;">
+                <a href="politica-de-privacidad.html" style="color: var(--color-gray); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--color-gray)'">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERSECTION OBSERVER SCRIPT -->
+    <script src="main.js"></script>
+
+    <!-- LIVE SIMULATION SCRIPT FOR THE CHART -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('candle-chart-container');
+            const priceText = document.getElementById('live-btc-price');
+            
+            // Initial simulated data
+            let btcPrice = 96420.50;
+            const candlesCount = 12;
+            const candles = [];
+
+            // Generate initial candles
+            for (let i = 0; i < candlesCount; i++) {
+                const isBullish = Math.random() > 0.45;
+                const height = Math.floor(Math.random() * 80) + 40; // 40px to 120px
+                const wTop = Math.floor(Math.random() * 20) + 5;
+                const wBottom = Math.floor(Math.random() * 20) + 5;
+                
+                const candleEl = createCandleElement(isBullish, height, wTop, wBottom);
+                container.appendChild(candleEl);
+                candles.push({ element: candleEl, isBullish, height, wTop, wBottom });
+            }
+
+            function createCandleElement(isBullish, height, wTop, wBottom) {
+                const candle = document.createElement('div');
+                candle.className = `candle ${isBullish ? 'bullish' : 'bearish'}`;
+                candle.style.height = '100%';
+                
+                // Wick
+                const wick = document.createElement('div');
+                wick.className = 'candle-wick';
+                wick.style.height = `${height + wTop + wBottom}px`;
+                wick.style.bottom = `calc(50% - ${(height + wTop + wBottom)/2}px)`;
+                
+                // Body
+                const body = document.createElement('div');
+                body.className = 'candle-body';
+                body.style.height = `${height}px`;
+                body.style.backgroundColor = isBullish ? '#10b981' : '#ef4444';
+                
+                candle.appendChild(wick);
+                candle.appendChild(body);
+                return candle;
+            }
+
+            // Real-time ticking price and chart updates
+            setInterval(() => {
+                const change = (Math.random() - 0.48) * 15; // Positive bias
+                btcPrice += change;
+                
+                // Update live text
+                priceText.innerText = `$${btcPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                priceText.style.color = change >= 0 ? '#10b981' : '#ef4444';
+
+                // Shift and add new candle every 4 seconds
+                if (Math.random() > 0.7) {
+                    const isBullish = change >= 0;
+                    const height = Math.floor(Math.random() * 80) + 40;
+                    const wTop = Math.floor(Math.random() * 20) + 5;
+                    const wBottom = Math.floor(Math.random() * 20) + 5;
+
+                    // Remove first candle
+                    const first = container.querySelector('.candle');
+                    if (first) {
+                        container.removeChild(first);
+                        candles.shift();
+                    }
+
+                    // Append new candle
+                    const newCandle = createCandleElement(isBullish, height, wTop, wBottom);
+                    container.appendChild(newCandle);
+                    candles.push({ element: newCandle, isBullish, height, wTop, wBottom });
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

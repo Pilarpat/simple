@@ -1,0 +1,94 @@
+<!-- Test file to prototype the XRAY animation -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .xray-container {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            background: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: none;
+        }
+
+        .xray-base-image {
+            position: absolute;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            z-index: 1;
+        }
+
+        /* SVG silhouette representation of circuit internal */
+        .xray-internal {
+            position: absolute;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            z-index: 2;
+            /* Mask will be updated by JS */
+            -webkit-mask-image: radial-gradient(circle 100px at var(--mouse-x, -100%) var(--mouse-y, -100%), black 0%, transparent 100%);
+            mask-image: radial-gradient(circle 100px at var(--mouse-x, -100%) var(--mouse-y, -100%), black 0%, transparent 100%);
+        }
+        
+        /* Using a filter trick to make the same image look like gold circuits */
+        .xray-internal-img {
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            filter: invert(1) sepia(1) saturate(10) hue-rotate(35deg) brightness(1.5) contrast(2);
+        }
+
+        .xray-flashlight {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+            top: var(--mouse-y, -100%);
+            left: var(--mouse-x, -100%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 3;
+            mix-blend-mode: screen;
+        }
+    </style>
+</head>
+<body>
+    <div class="xray-container" id="xray-demo">
+        <img src="image_6.png" class="xray-base-image" alt="Base Rocket">
+        <div class="xray-internal">
+            <!-- Simulated gold circuitry version of the rocket -->
+            <img src="image_6.png" class="xray-internal-img" alt="XRay Rocket">
+        </div>
+        <div class="xray-flashlight"></div>
+    </div>
+    <script>
+        const container = document.getElementById('xray-demo');
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Calculate percentage
+            const xPct = (x / rect.width) * 100;
+            const yPct = (y / rect.height) * 100;
+            
+            container.style.setProperty('--mouse-x', `${xPct}%`);
+            container.style.setProperty('--mouse-y', `${yPct}%`);
+        });
+        
+        container.addEventListener('mouseleave', () => {
+            container.style.setProperty('--mouse-x', `-100%`);
+            container.style.setProperty('--mouse-y', `-100%`);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Invest | Fondo Warren Buffett</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <meta name="description" content="Accede al fondo que ha superado el 34% de rentabilidad anual promedio durante 65 años.">
+
+    <!-- Google Fonts: Inter for minimal, clean, Swiss typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css?v=2.1">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="si-logo-trans.png" alt="Simple Invest" style="height: 35px; width: auto;">
+                <span class="logo-text">SIMPLE INVEST</span>
+            </a>
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+                                    <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">INICIO</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fondoia.html" class="dropdown-item">FONDO DE IA</a></li>
+                        <li><a href="fondo2026.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
+                        <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
+                        <li><a href="oro.html" class="dropdown-item">ORO</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="plataforma.html" class="nav-link">PLATAFORMA</a></li>
+                <li class="nav-item"><a href="index.html#servicios" class="nav-link">SERVICIOS</a></li>
+                <li class="nav-item"><a href="apertura.html" class="nav-link">APERTURA</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN 1: Hero Section -->
+    <section id="hero" class="hero section-dark bg-marble">
+        <div class="hero-bg-overlay"></div>
+        <div class="container two-column-grid hero-grid" style="padding-top: 160px; align-items: center;">
+            <div class="hero-text fade-in-up hero-text-left-desktop">
+                <p class="hero-supporting">Para perfiles de riesgo bajo</p>
+                <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem);">Fondo de Inversión Warren Buffett:<br>El poder del interés compuesto.</h1>
+                <p class="hero-subheadline" style="max-width: 600px;">Accede al fondo que, durante sus 65 años de existencia, ha superado el 20% de rentabilidad anual promedio. Una de las alternativas más sólidas y atractivas para hacer crecer tus ahorros a largo plazo sin incurrir en riesgos innecesarios.</p>
+                <div class="hero-actions">
+                    <a href="#closing" class="btn-primary">Solicitar asesoría ahora</a>
+                </div>
+            </div>
+            <div class="col-visual fade-in-up delay-1 hero-visual-center">
+                <div class="hero-visual-wrapper" style="position: relative; z-index: 2; margin-top: 140px;">
+                    <img src="berkshire-logo.png" alt="Berkshire Hathaway" style="position: absolute; bottom: 65%; left: 50%; transform: translateX(-50%); width: 340px; max-width: 80vw; z-index: -1; pointer-events: none;">
+                    <div class="hero-animated-number" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); backdrop-filter: blur(10px);">
+                        <div style="font-size: clamp(4rem, 8vw, 7rem); font-weight: 700; line-height: 1; background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            <span class="large-number" style="display: inline;" data-target="20.5" data-comma="true">0,0</span><span style="font-size: 0.6em;">%</span>
+                        </div>
+                        <p style="color: var(--color-gray); font-size: 1.1rem; margin-top: 1rem; text-transform: uppercase; letter-spacing: 3px;">Rentabilidad Histórica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (min-width: 992px) {
+                .hero-text-left-desktop { text-align: left; }
+                .hero-text-left-desktop .hero-subheadline { margin-left: 0; margin-right: auto; }
+                .hero-text-left-desktop .hero-actions { justify-content: flex-start; }
+            }
+            @media (max-width: 991px) {
+                .hero-text-left-desktop { text-align: center; margin-bottom: 3rem; }
+                .hero-text-left-desktop .hero-subheadline { margin-left: auto; margin-right: auto; }
+                .hero-text-left-desktop .hero-actions { justify-content: center; }
+                .hero-visual-center { text-align: center; }
+                .hero-visual-wrapper { margin-top: 180px !important; }
+            }
+        </style>
+    </section>
+
+    <!-- SECCIÓN 2: Bloque de Estadísticas (Grid de 3 columnas) -->
+    <section id="stats" class="strategy section-navy border-top">
+        <div class="container fade-in-up">
+            <div class="three-column-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <div class="principle-card">
+                    <div class="principle-line"></div>
+                    <h3 class="principle-title" style="font-size: 3rem; color: #fff; margin-bottom: 0.5rem;">+20,5%</h3>
+                    <p class="principle-text" style="font-size: 1.1rem;">Rentabilidad anual promedio histórica.</p>
+                </div>
+                <div class="principle-card delay-1">
+                    <div class="principle-line"></div>
+                    <h3 class="principle-title" style="font-size: 3rem; color: #fff; margin-bottom: 0.5rem;">65 Años</h3>
+                    <p class="principle-text" style="font-size: 1.1rem;">De trayectoria superando al mercado.</p>
+                </div>
+                <div class="principle-card delay-2">
+                    <div class="principle-line"></div>
+                    <h3 class="principle-title" style="font-size: 3rem; color: #fff; margin-bottom: 0.5rem;">+2,7M%</h3>
+                    <p class="principle-text" style="font-size: 1.1rem;">Crecimiento histórico acumulado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: Sección de Autoridad -->
+    <section id="approach" class="approach section-charcoal">
+        <div class="container two-column-grid">
+            <div class="col-text fade-in-up">
+                <h2 class="section-title">¿Por qué seguir los pasos de Warren Buffett?</h2>
+                <div class="text-block">
+                    <p>Warren Buffet es uno de los inversores y empresarios más exitosos de la historia, llegando a ocupar el primer puesto entre las personas más ricas del mundo gracias a su inigualable visión financiera.</p>
+                    <p>Dirige Berkshire Hathaway, un gigante que cotiza en la bolsa de EE. UU. y gestiona fondos de inversión con una capitalización que supera los 600.000 millones de dólares.</p>
+                </div>
+            </div>
+            <div class="col-visual fade-in-up delay-1" style="display: flex; align-items: center; justify-content: center;">
+                <div class="phone-mockup-container" style="max-width: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.5);">
+                    <img src="warren-buffett.png" alt="Warren Buffett" style="width: 100%; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: La Estrategia -->
+    <section id="context" class="context bg-circuit text-center">
+        <div class="container container-medium fade-in-up">
+            <h2 class="section-title">La magia del largo plazo y el Value Investing</h2>
+            <div class="context-text-block">
+                <p>Su estrategia es clara: analizar los fundamentos del mercado e invertir en empresas sólidas a largo plazo. ¿El resultado? Desde que comenzó hace 65 años, el fondo ha crecido un impresionante 2.772.328%.</p>
+                
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 3rem; margin-top: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    <p class="text-emphasis" style="margin: 0; font-size: 1.25rem; line-height: 1.8;">Para ponerlo en perspectiva: si hace 65 años hubieses invertido solo <span class="text-highlight">$1.000 USD</span>, y gracias al poder de la rentabilidad promedio (20,5%) combinada con el interés compuesto,<br><span class="text-highlight" style="font-size: 1.8rem; display: block; margin-top: 1rem;">¡hoy tendrías más de 29 millones de dólares!</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: ¿Cómo funciona tu inversión? -->
+    <section id="implementation" class="implementation section-charcoal">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">Diversificación automática e inteligente</h2>
+            <p class="section-subtitle text-center" style="max-width: 800px; margin: 0 auto 4rem;">Al invertir en el fondo de Warren Buffett, no estás comprando una sola empresa, sino que adquieres de forma diversificada una participación en las principales compañías que componen su portafolio (Apple, Coca-Cola, American Express, entre otras).</p>
+            
+            <div class="horizontal-steps">
+                <div class="step">
+                    <div class="step-marker">01</div>
+                    <h4 class="step-title">Inversión Inicial</h4>
+                    <p class="step-desc">Aportas tu capital al fondo consolidado bajo la misma estructura.</p>
+                </div>
+                <div class="step">
+                    <div class="step-marker">02</div>
+                    <h4 class="step-title">Diversificación</h4>
+                    <p class="step-desc">Tu dinero se distribuye automáticamente en líderes globales (Apple, Coca-Cola, etc.).</p>
+                </div>
+                <div class="step">
+                    <div class="step-marker">03</div>
+                    <h4 class="step-title">Dividendos</h4>
+                    <p class="step-desc">Absorbes los beneficios que generan estas múltiples compañías a la vez.</p>
+                </div>
+                <div class="step">
+                    <div class="step-marker">04</div>
+                    <h4 class="step-title">Interés Compuesto</h4>
+                    <p class="step-desc">Gestión continua a cargo del mejor inversor de todos los tiempos para maximizar tu rentabilidad a futuro.</p>
+                </div>
+                <div class="step-connector"></div>
+            </div>
+            
+            <p class="text-center" style="margin-top: 4rem; font-size: 1.1rem; color: var(--color-gray); max-width: 700px; margin-left: auto; margin-right: auto;">Tu capital se divide automáticamente para absorber los beneficios y dividendos de múltiples líderes del mercado, respaldado por la gestión del mejor inversor de todos los tiempos.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: Call To Action Final -->
+    <section id="closing" class="closing section-navy text-center border-top" style="padding: 6rem 0;">
+        <div class="container fade-in-up">
+            <h2 class="section-title" style="max-width: 800px; margin-left: auto; margin-right: auto;">¿Listo para hacer que tu dinero trabaje para ti con la estrategia de los grandes?</h2>
+            
+            <div class="form-container" style="margin-top: 3rem;">
+                <form id="contact-form" class="elegant-form" action="https://formsubmit.co/f5mediasocial@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nombre y Apellido</label>
+                        <input type="text" id="name" name="nombre" required placeholder="Ej: Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <div class="phone-input-group">
+                            <select id="country-code" name="codigo_pais" required class="country-select">
+                                <option value="+54">🇦🇷 +54</option>
+                                <option value="+598">🇺🇾 +598</option>
+                                <option value="+56">🇨🇱 +56</option>
+                                <option value="+55">🇧🇷 +55</option>
+                                <option value="+34">🇪🇸 +34</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+593">🇪🇨 +593</option>
+                                <option value="+51">🇵🇪 +51</option>
+                                <option value="+595">🇵🇾 +595</option>
+                                <option value="+591">🇧🇴 +591</option>
+                                <option value="+52">🇲🇽 +52</option>
+                                <option value="+57" selected>🇨🇴 +57</option>
+                            </select>
+                            <input type="tel" id="phone" name="telefono" required placeholder="9 1234 5678" class="phone-input-field">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="mensaje" rows="4" required placeholder="Quisiera recibir más información sobre el fondo y sus procesos de apertura..."></textarea>
+                    </div>
+
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_next" value="https://www.simple-invest.com/gracias.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_cc" value="octaviogswedencap@gmail.com">
+                    <input type="hidden" name="_subject" value="Simple Invest - Fondo Warren">
+                    <input type="text" name="_honey" style="display:none">
+
+                    <button type="submit" class="btn-primary form-submit-btn" style="margin-top: 1rem;">
+                        <span class="btn-text">Empieza a invertir hoy</span>
+                        <span class="spinner" style="display: none;">⟳</span>
+                    </button>
+
+                    <div class="form-error" style="display: none; color: #e82127; margin-top: 1rem; font-size: 0.9rem;">
+                        Hubo un error al enviar el formulario. Inténtelo nuevamente o contáctenos directamente.</div>
+                </form>
+
+                <!-- Success Message UI -->
+                <div id="form-success" class="form-success-card">
+                    <div class="success-icon">✦</div>
+                    <h3 style="margin-bottom: 1rem;">Mensaje enviado con éxito</h3>
+                    <p style="color: var(--color-muted); line-height: 1.6;">Gracias por contactarse con nosotros. Un asesor privado revisará su solicitud y nos comunicaremos con usted a la brevedad para brindarle nuestra máxima atención.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="global-footer section-dark">
+        <div class="container fade-in-up">
+            <div class="footer-contact-grid" style="grid-template-columns: 1fr; justify-items: center; max-width: 400px; margin: 0 auto;">
+                <!-- Colombia -->
+                <a href="tel:+5717085340" class="contact-card" style="width: 100%; max-width: 300px;">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-country">🇨🇴 Colombia</div>
+                    <div class="contact-number">+57 1 708 5340</div>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="si-logo-trans.png" alt="Simple Invest" style="height: 30px; width: auto;">
+                    <span class="logo-text">SIMPLE INVEST</span>
+                </div>
+                <div class="footer-links" style="display:flex;">
+                    <span style="color:var(--color-gray);">Acceso Institucional</span>
+                    <span style="color:var(--color-gray); margin:0 1rem;">•</span>
+                    <span style="color:var(--color-gray);">Value Investing</span>
+                </div>
+            </div>
+            <div class="footer-legal" style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem;">
+                <a href="politica-de-privacidad.html" style="color: var(--color-gray); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--color-gray)'">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+</html>

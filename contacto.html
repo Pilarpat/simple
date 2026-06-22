@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Institucional | Simple Invest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-page-section {
+            padding: 10rem 0 6rem 0;
+            min-height: 100vh;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info-col {
+            padding-top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .info-premium-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(145deg, rgba(176, 155, 113, 0.05) 0%, rgba(8, 12, 17, 0.8) 100%);
+            border: 1px solid rgba(176, 155, 113, 0.2);
+            border-radius: 16px;
+            padding: 5rem 2rem;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .info-premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(176, 155, 113, 0.15) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .info-premium-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-accent);
+            box-shadow: 0 30px 60px rgba(176, 155, 113, 0.15);
+        }
+
+        .info-premium-card:hover::before {
+            opacity: 1;
+        }
+
+        .info-icon-wrapper {
+            width: 90px;
+            height: 90px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(176, 155, 113, 0.3);
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(176, 155, 113, 0.6); }
+            70% { box-shadow: 0 0 0 25px rgba(176, 155, 113, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(176, 155, 113, 0); }
+        }
+
+        .info-icon-wrapper svg {
+            width: 45px;
+            height: 45px;
+            fill: #030303;
+        }
+
+        .info-premium-card h3 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-premium-card p {
+            color: var(--color-gray);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+            max-width: 85%;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .info-premium-card {
+                padding: 4rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="theme-dark">
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="si-logo-trans.png" alt="Simple Invest" style="height: 35px; width: auto;">
+                <span class="logo-text" style="margin-left: 10px;">SIMPLE INVEST</span>
+            </a>
+            <div class="menu-toggle">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">INICIO</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fondoia.html" class="dropdown-item">FONDO DE IA</a></li>
+                        <li><a href="fondo2026.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
+                        <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
+                        <li><a href="oro.html" class="dropdown-item">ORO</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="plataforma.html" class="nav-link">PLATAFORMA</a></li>
+                <li class="nav-item"><a href="index.html#servicios" class="nav-link">SERVICIOS</a></li>
+                <li class="nav-item"><a href="apertura.html" class="nav-link">APERTURA</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN SECTION -->
+    <section class="contact-page-section section-dark">
+        <div class="container fade-in-up">
+            <h1 class="section-title" style="margin-bottom: 1.5rem; color: #fff;">Contacto Institucional</h1>
+            <p style="color: var(--color-gray); font-size: 1.15rem; margin-bottom: 4rem; max-width: 750px; line-height: 1.6;">Comuníquese con nuestros asesores patrimoniales para agendar una reunión privada, resolver sus dudas operativas o recibir la documentación correspondiente sobre nuestras estrategias de inversión.</p>
+            
+            <div class="contact-grid">
+                <!-- COLUMNA 1: FORMULARIO (Mismo que landings) -->
+                <div class="form-container" style="margin: 0; max-width: 100%; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                    <form id="contact-form" class="elegant-form" action="https://formsubmit.co/f5mediasocial@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nombre y Apellido</label>
+                            <input type="text" id="name" name="nombre" required placeholder="Ej: Juan Pérez">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <div class="phone-input-group">
+                                <select id="country-code" name="codigo_pais" required class="country-select">
+                                    <option value="+54">🇦🇷 +54</option>
+                                    <option value="+598">🇺🇾 +598</option>
+                                    <option value="+56">🇨🇱 +56</option>
+                                    <option value="+55">🇧🇷 +55</option>
+                                    <option value="+34">🇪🇸 +34</option>
+                                    <option value="+1">🇺🇸 +1</option>
+                                    <option value="+593">🇪🇨 +593</option>
+                                    <option value="+51">🇵🇪 +51</option>
+                                    <option value="+595">🇵🇾 +595</option>
+                                    <option value="+591">🇧🇴 +591</option>
+                                    <option value="+52">🇲🇽 +52</option>
+                                    <option value="+57" selected>🇨🇴 +57</option>
+                                </select>
+                                <input type="tel" id="phone" name="telefono" required placeholder="9 1234 5678" class="phone-input-field">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="mensaje" rows="4" required placeholder="Quisiera recibir más información sobre..."></textarea>
+                        </div>
+
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_next" value="https://www.simple-invest.com/gracias.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Nuevo Prospecto de Simple Invest - Contacto General">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">Enviar mensaje</button>
+                    </form>
+                </div>
+
+                <!-- COLUMNA 2: SOPORTE INSTITUCIONAL -->
+                <div class="contact-info-col">
+                    <div class="info-premium-card">
+                        <div class="info-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <h3>Soporte Institucional</h3>
+                        <p style="margin-bottom: 1rem; font-size: 1.1rem; color: #fff; font-weight: 500;">contacto@simple-invest.com</p>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: #fff; font-weight: 500;">+57 1 708 5340</p>
+                        <p style="font-size: 0.9rem; color: var(--color-gray); max-width: 90%;">Horario de atención: Lunes a Viernes de 09:00 a 18:00 (GMT-5)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="global-footer section-dark" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top: 0; padding-top: 0; border-top: none; justify-content: center;">
+                <div class="footer-logo" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <img src="si-logo-trans.png" alt="Simple Invest" style="height: 30px; width: auto;">
+                    <span class="logo-text">SIMPLE INVEST</span>
+                </div>
+            </div>
+            <div class="footer-legal" style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem;">
+                <a href="politica-de-privacidad.html" style="color: var(--color-gray); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--color-gray)'">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        const form = document.getElementById('contact-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'Enviando...';
+                btn.disabled = true;
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.href = 'gracias.html';
+                    } else {
+                        alert('Ocurrió un error al enviar sus datos.');
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }
+                }).catch(error => {
+                    alert('Error de conexión.');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                });
+            });
+        }
+    </script>
+</body>
+</html>
