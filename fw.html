@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Invest | Fondo Warren Buffett</title>
+    <title>Pilar Patrimonio | Fondo Warren Buffett</title>
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <meta name="description" content="Accede al fondo que ha superado el 34% de rentabilidad anual promedio durante 65 años.">
 
@@ -20,9 +20,13 @@
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="container navbar-container">
-            <a href="index.html" class="navbar-logo" style="display: flex; align-items: center; gap: 10px;">
-                <img src="si-logo-trans.png" alt="Simple Invest" style="height: 35px; width: auto;">
-                <span class="logo-text">SIMPLE INVEST</span>
+            <a href="index.html" class="navbar-logo">
+                <div class="pilar-monogram">
+                    <div class="pilar-bar pilar-bar-1"></div>
+                    <div class="pilar-bar pilar-bar-2"></div>
+                    <div class="pilar-bar pilar-bar-3"></div>
+                </div>
+                <span class="logo-text">PILAR PATRIMONIO</span>
             </a>
             <div class="menu-toggle">
                 <span class="bar"></span>
@@ -34,8 +38,8 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="fondoia.html" class="dropdown-item">FONDO DE IA</a></li>
-                        <li><a href="fondo2026.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
+                        <li><a href="ia.html" class="dropdown-item">FONDO DE IA</a></li>
+                        <li><a href="fw.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
                         <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
                         <li><a href="oro.html" class="dropdown-item">ORO</a></li>
                     </ul>
@@ -49,41 +53,135 @@
     </nav>
 
     <!-- SECCIÓN 1: Hero Section -->
-    <section id="hero" class="hero section-dark bg-marble">
-        <div class="hero-bg-overlay"></div>
-        <div class="container two-column-grid hero-grid" style="padding-top: 160px; align-items: center;">
-            <div class="hero-text fade-in-up hero-text-left-desktop">
-                <p class="hero-supporting">Para perfiles de riesgo bajo</p>
-                <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem);">Fondo de Inversión Warren Buffett:<br>El poder del interés compuesto.</h1>
-                <p class="hero-subheadline" style="max-width: 600px;">Accede al fondo que, durante sus 65 años de existence, ha superado el 20% de rentabilidad anual promedio. Una de las alternativas más sólidas y atractivas para hacer crecer tus ahorros a largo plazo sin incurrir en riesgos innecesarios.</p>
-                <div class="hero-actions">
-                    <a href="#closing" class="btn-primary">Solicitar asesoría ahora</a>
+    <section id="hero" class="hero section-dark" style="background-color: #000000; padding-top: 160px; padding-bottom: 80px; position: relative; overflow: hidden;">
+        <div class="hero-bg-overlay" style="background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 50%); position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+        <div class="container two-column-grid hero-grid" style="align-items: center; gap: 4rem;">
+            <!-- Columna Izquierda (Contenido y Textos - alineado a la izquierda) -->
+            <div class="hero-text fade-in-up" style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+                <div class="hero-badge" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; padding: 0.4rem 0.8rem; margin-bottom: 1.5rem; display: inline-block;">
+                    <span style="font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; color: #fff; text-transform: uppercase;">DIVERSIFICACIÓN AUTOMÁTICA</span>
                 </div>
+                <h1 class="hero-title" style="font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 700; line-height: 1.2; color: #fff; margin-bottom: 1.5rem; text-align: left;">El poder de invertir en +100 gigantes globales con una sola decisión.</h1>
+                <h2 class="hero-subheadline" style="font-size: clamp(1.05rem, 2vw, 1.2rem); font-weight: 400; line-height: 1.6; color: #b0b5c6; margin-bottom: 2rem; text-align: left; max-width: 600px;">Accede a una cartera diversificada en las empresas más sólidas del mundo, respaldada por una estrategia que lleva más de 50 años generando un 20,5% de rentabilidad promedio anual.</h2>
+                
+                <ul class="hero-bullets" style="list-style: none; padding: 0; margin: 0 0 2.5rem 0; display: flex; flex-direction: column; gap: 1rem; width: 100%;">
+                    <li style="display: flex; align-items: center; gap: 0.8rem; font-size: 1.05rem; color: #fff; text-align: left;">
+                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: rgba(34, 197, 94, 0.15); border-radius: 50%; color: #22c55e; font-weight: bold; font-size: 0.8rem;">✓</span>
+                        <span><strong>40+</strong> Líderes cotizados en bolsa (Apple, Coca-Cola, Amex)</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.8rem; font-size: 1.05rem; color: #fff; text-align: left;">
+                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: rgba(34, 197, 94, 0.15); border-radius: 50%; color: #22c55e; font-weight: bold; font-size: 0.8rem;">✓</span>
+                        <span><strong>60+</strong> Marcas privadas consolidadas (GEICO, Duracell, BNSF)</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.8rem; font-size: 1.05rem; color: #fff; text-align: left;">
+                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: rgba(34, 197, 94, 0.15); border-radius: 50%; color: #22c55e; font-weight: bold; font-size: 0.8rem;">✓</span>
+                        <span><strong>0%</strong> Comisiones de gestión</span>
+                    </li>
+                </ul>
+
+                <div class="hero-actions" style="margin-bottom: 0.5rem; width: 100%; display: flex; justify-content: flex-start;">
+                    <a href="#formulario" class="btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem; border-radius: 6px; text-transform: none; font-weight: 500;">Solicitar Información e Informe</a>
+                </div>
+                <p style="font-size: 0.8rem; color: #6e768e; margin: 0; text-align: left; width: 100%;">100% gratuito. Sin compromiso de inversión.</p>
             </div>
-            <div class="col-visual fade-in-up delay-1 hero-visual-center">
-                <div class="hero-visual-wrapper" style="position: relative; z-index: 2; margin-top: 140px;">
-                    <img src="berkshire-logo.png" alt="Berkshire Hathaway" style="position: absolute; bottom: 65%; left: 50%; transform: translateX(-50%); width: 340px; max-width: 80vw; z-index: -1; pointer-events: none;">
-                    <div class="hero-animated-number" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); backdrop-filter: blur(10px);">
-                        <div style="font-size: clamp(4rem, 8vw, 7rem); font-weight: 700; line-height: 1; background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                            <span class="large-number" style="display: inline;" data-target="20.5" data-comma="true">0,0</span><span style="font-size: 0.6em;">%</span>
-                        </div>
-                        <p style="color: var(--color-gray); font-size: 1.1rem; margin-top: 1rem; text-transform: uppercase; letter-spacing: 3px;">Rentabilidad Histórica</p>
-                    </div>
+            
+            <!-- Columna Derecha: Video Animación -->
+            <div class="col-visual fade-in-up delay-1" style="width: 100%;">
+                <div id="hero-visual-container" style="width: 100%; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <video 
+                      autoplay 
+                      loop 
+                      muted 
+                      playsinline 
+                      class="w-full h-auto max-h-[500px] object-cover rounded-2xl"
+                      style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 16px; background-color: transparent; mix-blend-mode: screen;"
+                    >
+                      <source src="Glass_tiles_orbiting_in_space_202608092329.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
         <style>
-            @media (min-width: 992px) {
-                .hero-text-left-desktop { text-align: left; }
-                .hero-text-left-desktop .hero-subheadline { margin-left: 0; margin-right: auto; }
-                .hero-text-left-desktop .hero-actions { justify-content: flex-start; }
-            }
             @media (max-width: 991px) {
-                .hero-text-left-desktop { text-align: center; margin-bottom: 3rem; }
-                .hero-text-left-desktop .hero-subheadline { margin-left: auto; margin-right: auto; }
-                .hero-text-left-desktop .hero-actions { justify-content: center; }
-                .hero-visual-center { text-align: center; }
-                .hero-visual-wrapper { margin-top: 180px !important; }
+                #hero {
+                    padding-top: 120px !important;
+                    padding-bottom: 60px !important;
+                }
+                .hero-grid {
+                    gap: 3rem !important;
+                }
+                #hero-visual-container {
+                    min-height: 350px !important;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- SECCIÓN 3: Sección de Autoridad -->
+    <section id="approach" class="approach section-charcoal">
+        <div class="container two-column-grid">
+            <div class="col-visual fade-in-up" style="display: flex; align-items: center; justify-content: center;">
+                <div class="phone-mockup-container" style="max-width: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.5);">
+                    <img src="warren-buffett.png" alt="Warren Buffett" style="width: 100%; display: block;">
+                </div>
+            </div>
+            <div class="col-text fade-in-up delay-1">
+                <h2 class="section-title">¿Por qué seguir los pasos de Warren Buffett?</h2>
+                <div class="text-block">
+                    <p>Warren Buffet es uno de los inversores y empresarios más exitosos de la historia, llegando a ocupar el primer puesto entre las personas más ricas del mundo gracias a su inigualable visión financiera.</p>
+                    <p>Dirige Berkshire Hathaway, un gigante que cotiza en la bolsa de EE. UU. y gestiona fondos de inversión con una capitalización que supera los 600.000 millones de dólares.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: El Dilema del Inversor -->
+    <section id="dilema" style="background-color: #0F172A; padding: 6rem 0; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container two-column-grid" style="align-items: center; gap: 4rem;">
+            <!-- Columna 1: Contenido y Textos (Alineado a la izquierda) -->
+            <div style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+                <!-- Badge/Etiqueta superior -->
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; padding: 0.4rem 0.8rem; margin-bottom: 1.5rem; display: inline-block;">
+                    <span style="font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; color: #a0aec0; text-transform: uppercase;">EL DESAFÍO DEL INVERSOR</span>
+                </div>
+                
+                <!-- Título H2 -->
+                <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.25; color: #fff; margin-bottom: 1rem; text-align: left;">
+                    ¿Construir una cartera sólida o perder el tiempo adivinando el mercado?
+                </h2>
+                
+                <!-- Párrafo introductorio -->
+                <p style="font-size: 1.1rem; line-height: 1.6; color: #94a3b8; margin: 0; max-width: 600px;">
+                    La mayoría de los inversores individuales se enfrentan a un dilema constante al intentar proteger y hacer crecer su patrimonio.
+                </p>
+            </div>
+            
+            <!-- Columna 2: Las 3 Opciones (Alineado a la derecha) -->
+            <div style="width: 100%; display: flex; flex-direction: column; gap: 1.2rem;">
+                <!-- Tarjeta 1 -->
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-left: 3px solid #ef4444; border-radius: 6px; padding: 1.2rem 1.5rem; text-align: left;">
+                    <h4 style="font-size: 1.05rem; font-weight: 600; color: #f87171; margin: 0 0 0.4rem 0;">Comprar acciones individuales</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.5; color: #94a3b8; margin: 0;">Exige cientos de horas de análisis y asume un riesgo de concentración elevado.</p>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-left: 3px solid #ef4444; border-radius: 6px; padding: 1.2rem 1.5rem; text-align: left;">
+                    <h4 style="font-size: 1.05rem; font-weight: 600; color: #f87171; margin: 0 0 0.4rem 0;">Invertir en fondos tradicionales</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.5; color: #94a3b8; margin: 0;">Comisiones de gestión continuas que merman tu rentabilidad y rara vez superan al mercado.</p>
+                </div>
+                <!-- Bloque destacado de "Solución (La Tercera Vía)" -->
+                <div style="background: rgba(34, 197, 94, 0.03); border: 1px solid rgba(34, 197, 94, 0.1); border-left: 3px solid #22c55e; border-radius: 6px; padding: 1.5rem; text-align: left;">
+                    <h4 style="font-size: 1.05rem; font-weight: 600; color: #4ade80; margin: 0 0 0.5rem 0; text-transform: uppercase; letter-spacing: 1px;">Existe una tercera vía</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; margin: 0;">
+                        Invertir en una estructura de asignación de capital ya construida, que adquiere negocios rentables y reinvierte cada dólar generado para maximizar tu patrimonio de forma automática.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 991px) {
+                #dilema {
+                    padding: 4rem 0 !important;
+                }
             }
         </style>
     </section>
@@ -111,22 +209,193 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 3: Sección de Autoridad -->
-    <section id="approach" class="approach section-charcoal">
-        <div class="container two-column-grid">
-            <div class="col-text fade-in-up">
-                <h2 class="section-title">¿Por qué seguir los pasos de Warren Buffett?</h2>
-                <div class="text-block">
-                    <p>Warren Buffet es uno de los inversores y empresarios más exitosos de la historia, llegando a ocupar el primer puesto entre las personas más ricas del mundo gracias a su inigualable visión financiera.</p>
-                    <p>Dirige Berkshire Hathaway, un gigante que cotiza en la bolsa de EE. UU. y gestiona fondos de inversión con una capitalización que supera los 600.000 millones de dólares.</p>
+    <!-- SECCIÓN: Anatomía del Titán -->
+    <section id="anatomia" style="background-color: #0A0A0A; padding: 6rem 0; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container" style="display: flex; flex-direction: column; gap: 4rem;">
+            
+            <!-- Encabezado de Sección Centrado -->
+            <div class="fade-in-up" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <!-- Badge/Etiqueta superior -->
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; padding: 0.4rem 0.8rem; margin-bottom: 1.5rem; display: inline-block;">
+                    <span style="font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; color: #a0aec0; text-transform: uppercase;">COBERTURA Y DIVERSIFICACIÓN</span>
                 </div>
+                <!-- Título H2 -->
+                <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.25; color: #fff; margin-bottom: 1rem; text-align: center;">
+                    No es solo una acción. Es un imperio corporativo.
+                </h2>
+                <!-- Subtítulo / Párrafo -->
+                <p style="font-size: 1.1rem; line-height: 1.6; color: #94a3b8; margin: 0; text-align: center;">
+                    Con una sola decisión accedes a una combinación equilibrada de gigantes que cotizan en bolsa y empresas operativas privadas que generan flujo de caja todos los días.
+                </p>
             </div>
-            <div class="col-visual fade-in-up delay-1" style="display: flex; align-items: center; justify-content: center;">
-                <div class="phone-mockup-container" style="max-width: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.5);">
-                    <img src="warren-buffett.png" alt="Warren Buffett" style="width: 100%; display: block;">
+            
+            <!-- Layout Principal (2 Columnas: Públicas a la izquierda, Privadas a la derecha) -->
+            <div class="two-column-grid" style="align-items: stretch; gap: 4rem;">
+                
+                <!-- Columna 1: Empresas Públicas (Izquierda) -->
+                <div class="fade-in-up" style="width: 100%;">
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); height: 100%;">
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #fff; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.6rem;">
+                            <span style="color: #63b3ed;">●</span> Las Empresas Públicas (~40 Compañías)
+                        </h3>
+                        <p style="font-size: 0.95rem; line-height: 1.5; color: #94a3b8; margin-bottom: 1.5rem;">
+                            Participaciones masivas en las marcas globales más dominantes del mercado de valores.
+                        </p>
+                        
+                        <!-- Tags / Etiquetas por categorías -->
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div>
+                                <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #718096; display: block; margin-bottom: 0.5rem;">Tecnología y Consumo</span>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                    <span style="background: rgba(99, 179, 237, 0.1); border: 1px solid rgba(99, 179, 237, 0.2); color: #90cdf4; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">Apple</span>
+                                    <span style="background: rgba(99, 179, 237, 0.1); border: 1px solid rgba(99, 179, 237, 0.2); color: #90cdf4; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">Coca-Cola</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #718096; display: block; margin-bottom: 0.5rem;">Servicios Financieros</span>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                    <span style="background: rgba(99, 179, 237, 0.1); border: 1px solid rgba(99, 179, 237, 0.2); color: #90cdf4; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">American Express</span>
+                                    <span style="background: rgba(99, 179, 237, 0.1); border: 1px solid rgba(99, 179, 237, 0.2); color: #90cdf4; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">Bank of America</span>
+                                    <span style="background: rgba(99, 179, 237, 0.1); border: 1px solid rgba(99, 179, 237, 0.2); color: #90cdf4; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">Moody's</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #718096; display: block; margin-bottom: 0.5rem;">Energía e Industria</span>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                    <span style="background: rgba(99, 179, 237, 0.1); border: 1px solid rgba(99, 179, 237, 0.2); color: #90cdf4; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">Chevron</span>
+                                    <span style="background: rgba(99, 179, 237, 0.1); border: 1px solid rgba(99, 179, 237, 0.2); color: #90cdf4; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">Occidental Petroleum</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Columna 2: Empresas Privadas (Derecha) -->
+                <div class="fade-in-up delay-1" style="width: 100%;">
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); height: 100%;">
+                        <h3 style="font-size: 1.3rem; font-weight: 600; color: #fff; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.6rem;">
+                            <span style="color: #48bb78;">●</span> Las Empresas Privadas (~60 Subsidiarias)
+                        </h3>
+                        <p style="font-size: 0.95rem; line-height: 1.5; color: #94a3b8; margin-bottom: 1.5rem;">
+                            Propiedad del 100% de negocios operativos consolidados en sectores estratégicos.
+                        </p>
+                        
+                        <!-- Tags / Etiquetas por categorías -->
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div>
+                                <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #718096; display: block; margin-bottom: 0.5rem;">Infraestructura y Transporte</span>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                    <span style="background: rgba(72, 187, 120, 0.1); border: 1px solid rgba(72, 187, 120, 0.2); color: #98e2b1; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">BNSF Railway</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #718096; display: block; margin-bottom: 0.5rem;">Seguros (Generadores de Float)</span>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                    <span style="background: rgba(72, 187, 120, 0.1); border: 1px solid rgba(72, 187, 120, 0.2); color: #98e2b1; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">GEICO</span>
+                                    <span style="background: rgba(72, 187, 120, 0.1); border: 1px solid rgba(72, 187, 120, 0.2); color: #98e2b1; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">General Re</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #718096; display: block; margin-bottom: 0.5rem;">Marcas Industriales y Consumo</span>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                    <span style="background: rgba(72, 187, 120, 0.1); border: 1px solid rgba(72, 187, 120, 0.2); color: #98e2b1; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">Duracell</span>
+                                    <span style="background: rgba(72, 187, 120, 0.1); border: 1px solid rgba(72, 187, 120, 0.2); color: #98e2b1; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">Dairy Queen</span>
+                                    <span style="background: rgba(72, 187, 120, 0.1); border: 1px solid rgba(72, 187, 120, 0.2); color: #98e2b1; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">Fruit of the Loom</span>
+                                    <span style="background: rgba(72, 187, 120, 0.1); border: 1px solid rgba(72, 187, 120, 0.2); color: #98e2b1; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 500;">NetJets</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <style>
+            @media (max-width: 991px) {
+                #anatomia {
+                    padding: 4rem 0 !important;
+                }
+            }
+        </style>
+    </section>
+
+
+
+    <!-- SECCIÓN: El Poder del Interés Compuesto -->
+    <section id="interes-compuesto" style="background-color: #0F172A; padding: 6rem 0; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container two-column-grid" style="align-items: center; gap: 4rem;">
+            
+            <!-- Columna 1: Contenido y Métricas -->
+            <div style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+                <!-- Badge/Etiqueta superior -->
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; padding: 0.4rem 0.8rem; margin-bottom: 1.5rem; display: inline-block;">
+                    <span style="font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; color: #a0aec0; text-transform: uppercase;">CRECIMIENTO EXPONENCIAL</span>
+                </div>
+                
+                <!-- Título H2 -->
+                <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.25; color: #fff; margin-bottom: 1rem; text-align: left;">
+                    El impacto real de un 20,5% anual compuesto.
+                </h2>
+                
+                <!-- Párrafo introductorio -->
+                <p style="font-size: 1.1rem; line-height: 1.6; color: #94a3b8; margin-bottom: 2.5rem; max-width: 600px;">
+                    El verdadero secreto de esta inversión no es solo la rentabilidad, sino lo que sucede cuando el capital trabaja sin interrupciones año tras año.
+                </p>
+                
+                <!-- Bloque de Métricas / Tarjetas Destacadas -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%; margin-bottom: 2rem;">
+                    <!-- Tarjeta 1 -->
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 1.5rem;">
+                        <span style="font-size: 0.85rem; font-weight: 500; color: #94a3b8; display: block; margin-bottom: 0.5rem;">Si hubieras invertido $10.000 USD hace 10 años</span>
+                        <div style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; color: #00FF88; line-height: 1; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif;">
+                            $64.546 USD
+                        </div>
+                        <span style="font-size: 0.9rem; color: #cbd5e1;">Multiplicaste tu capital inicial por 6,4 veces.</span>
+                    </div>
+                    
+                    <!-- Tarjeta 2 -->
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 1.5rem;">
+                        <span style="font-size: 0.85rem; font-weight: 500; color: #94a3b8; display: block; margin-bottom: 0.5rem;">Dejando crecer ese mismo capital 10 años más</span>
+                        <div style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; color: #00FF88; line-height: 1; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif;">
+                            $416.620 USD
+                        </div>
+                        <span style="font-size: 0.9rem; color: #cbd5e1;">Un crecimiento de 41,6 veces el monto original.</span>
+                    </div>
+                </div>
+                
+                <!-- Nota aclaratoria -->
+                <p style="font-size: 0.75rem; line-height: 1.4; color: #64748b; margin: 0;">
+                    *Cálculo basado en el rendimiento histórico promedio compuesto de Berkshire Hathaway (1965–Presente). Rendimientos pasados no garantizan rendimientos futuros.
+                </p>
+            </div>
+            
+            <!-- Columna 2: Video Crecimiento Exponencial (9:16) -->
+            <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                <div id="interes-compuesto-visual-container" style="width: 100%; max-width: 350px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 20px 40px rgba(0, 255, 136, 0.08), 0 0 30px rgba(0, 0, 0, 0.6); background-color: #000000;">
+                    <video 
+                      autoplay 
+                      loop 
+                      muted 
+                      playsinline 
+                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block;"
+                    >
+                      <source src="glowing-growth.mp4" type="video/mp4">
+                      <source src="Glowing_green_financial_growth_c…_202608100003.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
+        <style>
+            @media (max-width: 991px) {
+                #interes-compuesto {
+                    padding: 4rem 0 !important;
+                }
+                #interes-compuesto-visual-container {
+                    min-height: 300px !important;
+                    margin-top: 2rem;
+                }
+            }
+        </style>
     </section>
 
     <!-- SECCIÓN 4: La Estrategia -->
@@ -143,128 +412,383 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 5: ¿Cómo funciona tu inversión? -->
-    <section id="implementation" class="implementation section-charcoal">
-        <div class="container fade-in-up">
-            <h2 class="section-title text-center">Diversificación automática e inteligente</h2>
-            <p class="section-subtitle text-center" style="max-width: 800px; margin: 0 auto 4rem;">Al invertir en el fondo de Warren Buffett, no estás comprando una sola empresa, sino que adquieres de forma diversificada una participación en las principales compañías que componen su portafolio (Apple, Coca-Cola, American Express, entre otras).</p>
+    <!-- SECCIÓN: Las Ventajas Injustas -->
+    <section id="ventajas-injustas" style="background-color: #0A0A0A; padding: 6rem 0; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container" style="display: flex; flex-direction: column; gap: 4rem;">
             
-            <div class="horizontal-steps">
-                <div class="step">
-                    <div class="step-marker">01</div>
-                    <h4 class="step-title">Inversión Inicial</h4>
-                    <p class="step-desc">Aportas tu capital al fondo consolidado bajo la misma estructura.</p>
+            <!-- Encabezado de Sección Centrado -->
+            <div class="fade-in-up" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <!-- Badge/Etiqueta superior -->
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; padding: 0.4rem 0.8rem; margin-bottom: 1.5rem; display: inline-block;">
+                    <span style="font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; color: #a0aec0; text-transform: uppercase;">EFICIENCIA FINANCIERA</span>
                 </div>
-                <div class="step">
-                    <div class="step-marker">02</div>
-                    <h4 class="step-title">Diversificación</h4>
-                    <p class="step-desc">Tu dinero se distribuye automáticamente en líderes globales (Apple, Coca-Cola, etc.).</p>
-                </div>
-                <div class="step">
-                    <div class="step-marker">03</div>
-                    <h4 class="step-title">Dividendos</h4>
-                    <p class="step-desc">Absorbes los beneficios que generan estas múltiples compañías a la vez.</p>
-                </div>
-                <div class="step">
-                    <div class="step-marker">04</div>
-                    <h4 class="step-title">Interés Compuesto</h4>
-                    <p class="step-desc">Gestión continua a cargo del mejor inversor de todos los tiempos para maximizar tu rentabilidad a futuro.</p>
-                </div>
-                <div class="step-connector"></div>
+                
+                <!-- Título H2 -->
+                <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.25; color: #fff; margin-bottom: 1rem; text-align: center;">
+                    Por qué supera a un fondo o ETF tradicional.
+                </h2>
+                
+                <!-- Párrafo introductorio -->
+                <p style="font-size: 1.1rem; line-height: 1.6; color: #94a3b8; margin: 0; text-align: center;">
+                    Berkshire Hathaway no es un fondo de inversión común; es una estructura corporativa diseñada para maximizar el retorno del inversor sin las fricciones del sistema tradicional.
+                </p>
             </div>
             
-            <p class="text-center" style="margin-top: 4rem; font-size: 1.1rem; color: var(--color-gray); max-width: 700px; margin-left: auto; margin-right: auto;">Tu capital se divide automáticamente para absorber los beneficios y dividendos de múltiples líderes del mercado, respaldado por la gestión del mejor inversor de todos los tiempos.</p>
+            <!-- Grid de 3 Columnas para las Ventajas (Alineación Horizontal) -->
+            <div class="fade-in-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; width: 100%;">
+                <!-- Ventaja 1 -->
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 2rem; display: flex; flex-direction: column; gap: 1.2rem; align-items: flex-start; height: 100%;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(99, 179, 237, 0.1); border-radius: 50%; color: #63b3ed; font-weight: bold; flex-shrink: 0;">%</div>
+                    <div>
+                        <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 0.5rem 0;">0% Comisiones de Gestión</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.5; color: #94a3b8; margin: 0;">A diferencia de los fondos de inversión tradicionales o administrados que cobran comisiones anuales (1% a 2%), en Berkshire el 100% de tu capital trabaja para ti.</p>
+                    </div>
+                </div>
+                
+                <!-- Ventaja 2 -->
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 2rem; display: flex; flex-direction: column; gap: 1.2rem; align-items: flex-start; height: 100%;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(99, 179, 237, 0.1); border-radius: 50%; color: #63b3ed; font-weight: bold; flex-shrink: 0;">$</div>
+                    <div>
+                        <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 0.5rem 0;">Apalancamiento Gratuito (El "Float")</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.5; color: #94a3b8; margin: 0;">Utiliza las primas cobradas por sus aseguradoras (GEICO, General Re) como capital a costo casi cero para adquirir nuevos negocios y acciones.</p>
+                    </div>
+                </div>
+                
+                <!-- Ventaja 3 -->
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 2rem; display: flex; flex-direction: column; gap: 1.2rem; align-items: flex-start; height: 100%;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(99, 179, 237, 0.1); border-radius: 50%; color: #63b3ed; font-weight: bold; flex-shrink: 0;">⚡</div>
+                    <div>
+                        <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 0.5rem 0;">Máxima Eficiencia Fiscal</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.5; color: #94a3b8; margin: 0;">Los dividendos cobrados de sus empresas se reinvierten internamente sin generar eventos impositivos inmediatos para el accionista hasta el momento de la venta.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        <style>
+            @media (max-width: 991px) {
+                #ventajas-injustas {
+                    padding: 4rem 0 !important;
+                }
+            }
+        </style>
     </section>
 
-    <!-- SECCIÓN 6: Call To Action Final -->
-    <section id="closing" class="closing section-navy text-center border-top" style="padding: 6rem 0;">
-        <div class="container fade-in-up">
-            <h2 class="section-title" style="max-width: 800px; margin-left: auto; margin-right: auto;">¿Listo para hacer que tu dinero trabaje para ti con la estrategia de los grandes?</h2>
+    <!-- SECCIÓN: El Aval Histórico -->
+    <section id="aval-historico" style="background-color: #0F172A; padding: 6rem 0; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container two-column-grid" style="align-items: center; gap: 4rem;">
             
-            <div class="form-container" style="margin-top: 3rem;">
-                <form id="contact-form" class="elegant-form" action="https://formsubmit.co/f5mediasocial@gmail.com" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nombre y Apellido</label>
-                        <input type="text" id="name" name="nombre" required placeholder="Ej: Juan Pérez">
-                    </div>
+            <!-- Columna 1: Gráfico Resiliencia en Crisis (Izquierda) -->
+            <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                <div id="aval-historico-visual-container" style="width: 100%; max-width: 550px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(99, 179, 237, 0.1); border: 1px solid rgba(255, 255, 255, 0.1); background-color: #0A0A0A;">
+                    <img 
+                      src="resiliencia-crisis.jpeg" 
+                      alt="Resiliencia en Crisis: Berkshire Hathaway (1965-Presente)" 
+                      style="width: 100%; height: auto; display: block; border-radius: 16px; object-fit: cover;"
+                    />
+                </div>
+            </div>
 
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Teléfono</label>
-                        <div class="phone-input-group">
-                            <select id="country-code" name="codigo_pais" required class="country-select">
-                                <option value="+54">🇦🇷 +54</option>
-                                <option value="+598">🇺🇾 +598</option>
-                                <option value="+56">🇨🇱 +56</option>
-                                <option value="+55">🇧🇷 +55</option>
-                                <option value="+34">🇪🇸 +34</option>
-                                <option value="+1">🇺🇸 +1</option>
-                                <option value="+593">🇪🇨 +593</option>
-                                <option value="+51">🇵🇪 +51</option>
-                                <option value="+595">🇵🇾 +595</option>
-                                <option value="+591">🇧🇴 +591</option>
-                                <option value="+52">🇲🇽 +52</option>
-                                <option value="+57" selected>🇨🇴 +57</option>
-                            </select>
-                            <input type="tel" id="phone" name="telefono" required placeholder="9 1234 5678" class="phone-input-field">
+            <!-- Columna 2: Contenido y Trayectoria (Derecha) -->
+            <div style="text-align: left; display: flex; flex-direction: column; align-items: flex-start;">
+                <!-- Badge/Etiqueta superior -->
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; padding: 0.4rem 0.8rem; margin-bottom: 1.5rem; display: inline-block;">
+                    <span style="font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; color: #a0aec0; text-transform: uppercase;">TRAYECTORIA Y SOLVENCIA</span>
+                </div>
+                
+                <!-- Título H2 -->
+                <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.25; color: #fff; margin-bottom: 1rem; text-align: left;">
+                    Más de 50 años resistiendo y superando cualquier ciclo económico.
+                </h2>
+                
+                <!-- Párrafo introductorio -->
+                <p style="font-size: 1.1rem; line-height: 1.6; color: #94a3b8; margin-bottom: 2.5rem; max-width: 600px;">
+                    Desde crisis financieras hasta burbujas tecnológicas, la compañía ha demostrado una disciplina inquebrantable fundada en el principio del Value Investing y la preservación del capital.
+                </p>
+                
+                <!-- Bloque de 3 Pilares de Solvencia -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%;">
+                    <!-- Pilar 1 -->
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <span style="font-size: 1.2rem; color: #63b3ed; line-height: 1; flex-shrink: 0; margin-top: 0.2rem;">✦</span>
+                        <div>
+                            <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 0.4rem 0;">Ventajas Competitivas Duraderas ("Moats")</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.5; color: #94a3b8; margin: 0;">Inversión exclusiva en empresas indispensables con marcas sólidas, barreras de entrada altas y poder de fijación de precios.</p>
                         </div>
                     </div>
+                    
+                    <!-- Pilar 2 -->
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <span style="font-size: 1.2rem; color: #63b3ed; line-height: 1; flex-shrink: 0; margin-top: 0.2rem;">✦</span>
+                        <div>
+                            <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 0.4rem 0;">Reservas de Efectivo Gigantescas</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.5; color: #94a3b8; margin: 0;">Mantiene miles de millones en liquidez listos para actuar y adquirir grandes activos con descuento durante momentos de pánico en el mercado.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pilar 3 -->
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <span style="font-size: 1.2rem; color: #63b3ed; line-height: 1; flex-shrink: 0; margin-top: 0.2rem;">✦</span>
+                        <div>
+                            <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 0.4rem 0;">Visión Intergeneracional</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.5; color: #94a3b8; margin: 0;">Una cultura corporativa y un equipo de asignación de capital estructurados para trascender a sus fundadores y seguir creando valor durante décadas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 991px) {
+                #aval-historico {
+                    padding: 4rem 0 !important;
+                }
+                #aval-historico-visual-container {
+                    min-height: 300px !important;
+                    margin-bottom: 2rem;
+                }
+            }
+        </style>
+    </section>
 
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="mensaje" rows="4" required placeholder="Quisiera recibir más información sobre el fondo y sus procesos de apertura..."></textarea>
+
+
+    <!-- SECCIÓN: Preguntas Frecuentes (FAQ) -->
+    <section id="faq" style="background-color: #0A0A0A; padding: 6rem 0; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 3rem;">
+            
+            <!-- Encabezado de Sección Centrado -->
+            <div class="fade-in-up" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <!-- Badge/Etiqueta superior -->
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; padding: 0.4rem 0.8rem; margin-bottom: 1.5rem; display: inline-block;">
+                    <span style="font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; color: #a0aec0; text-transform: uppercase;">RESOLVIENDO TUS DUDAS</span>
+                </div>
+                
+                <!-- Título H2 -->
+                <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.25; color: #fff; margin-bottom: 1rem; text-align: center;">
+                    Preguntas frecuentes sobre esta oportunidad.
+                </h2>
+                
+                <!-- Párrafo introductorio -->
+                <p style="font-size: 1.1rem; line-height: 1.6; color: #94a3b8; margin: 0; text-align: center;">
+                    Despejamos las inquietudes clave para que tomes una decisión informada y con total seguridad.
+                </p>
+            </div>
+            
+            <!-- Acordeón de Preguntas y Respuestas Centrado -->
+            <div class="fade-in-up" style="display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 800px; margin: 0 auto;">
+                
+                <!-- Pregunta 1 -->
+                <details class="faq-item" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; overflow: hidden; width: 100%; transition: all 0.3s ease;">
+                    <summary style="font-size: 1.05rem; font-weight: 600; color: #fff; padding: 1.2rem 1.5rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; user-select: none;">
+                        <span>¿Necesito una fortuna para empezar a invertir?</span>
+                        <span class="faq-icon" style="color: #63b3ed; font-size: 1.2rem; transition: transform 0.3s;">+</span>
+                    </summary>
+                    <div style="padding: 0 1.5rem 1.5rem; font-size: 0.95rem; line-height: 1.6; color: #94a3b8; text-align: left;">
+                        No. Aunque las acciones Clase A son históricamente las más caras del mundo, existen las acciones Clase B (BRK.B), diseñadas para ser 100% accesibles para cualquier inversor manteniendo exactamente los mismos beneficios económicos proporcionales.
+                    </div>
+                </details>
+                
+                <!-- Pregunta 2 -->
+                <details class="faq-item" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; overflow: hidden; width: 100%; transition: all 0.3s ease;">
+                    <summary style="font-size: 1.05rem; font-weight: 600; color: #fff; padding: 1.2rem 1.5rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; user-select: none;">
+                        <span>¿Qué garantiza la continuidad del rendimiento a futuro?</span>
+                        <span class="faq-icon" style="color: #63b3ed; font-size: 1.2rem; transition: transform 0.3s;">+</span>
+                    </summary>
+                    <div style="padding: 0 1.5rem 1.5rem; font-size: 0.95rem; line-height: 1.6; color: #94a3b8; text-align: left;">
+                        Berkshire Hathaway no depende de una sola persona; es una institución con una cultura descentralizada, directivos especializados en cada subsidiaria y un equipo de asignación de capital preparado para continuar la misma filosofía durante décadas.
+                    </div>
+                </details>
+                
+                <!-- Pregunta 3 -->
+                <details class="faq-item" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; overflow: hidden; width: 100%; transition: all 0.3s ease;">
+                    <summary style="font-size: 1.05rem; font-weight: 600; color: #fff; padding: 1.2rem 1.5rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; user-select: none;">
+                        <span>¿Existen comisiones ocultas o cobros por gestión?</span>
+                        <span class="faq-icon" style="color: #63b3ed; font-size: 1.2rem; transition: transform 0.3s;">+</span>
+                    </summary>
+                    <div style="padding: 0 1.5rem 1.5rem; font-size: 0.95rem; line-height: 1.6; color: #94a3b8; text-align: left;">
+                        No. Al comprar la acción directamente no pagas las comisiones de gestión anuales (1% al 2%) típicas de los fondos de inversión comunes. El 100% de tu dinero trabaja en el activo.
+                    </div>
+                </details>
+                
+                <!-- Pregunta 4 -->
+                <details class="faq-item" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; overflow: hidden; width: 100%; transition: all 0.3s ease;">
+                    <summary style="font-size: 1.05rem; font-weight: 600; color: #fff; padding: 1.2rem 1.5rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; user-select: none;">
+                        <span>¿Cuál es el siguiente paso para recibir asesoría o comenzar?</span>
+                        <span class="faq-icon" style="color: #63b3ed; font-size: 1.2rem; transition: transform 0.3s;">+</span>
+                    </summary>
+                    <div style="padding: 0 1.5rem 1.5rem; font-size: 0.95rem; line-height: 1.6; color: #94a3b8; text-align: left;">
+                        Simplemente completa el formulario ubicado al final de esta página. Un especialista se pondrá en contacto contigo para enviarte el dossier informativo y guiarte paso a paso sin compromiso.
+                    </div>
+                </details>
+                
+            </div>
+        </div>
+        <style>
+            .faq-item[open] .faq-icon {
+                transform: rotate(45deg);
+            }
+            .faq-item::-webkit-details-marker {
+                display: none;
+            }
+            @media (max-width: 991px) {
+                #faq {
+                    padding: 4rem 0 !important;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- SECCIÓN: Cierre y Formulario de Captación -->
+    <section id="formulario" style="background-color: #0F172A; padding: 6rem 0; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 3rem;">
+            
+            <!-- Encabezado de Sección Centrado -->
+            <div class="fade-in-up" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <!-- Badge/Etiqueta superior -->
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; padding: 0.4rem 0.8rem; margin-bottom: 1.5rem; display: inline-block;">
+                    <span style="font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; color: #a0aec0; text-transform: uppercase;">ACCIÓN DIRECTA</span>
+                </div>
+                
+                <!-- Título H2 -->
+                <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.25; color: #fff; margin-bottom: 1rem; text-align: center;">
+                    Comienza a construir tu patrimonio con la estrategia más sólida del mercado.
+                </h2>
+                
+                <!-- Párrafo introductorio -->
+                <p style="font-size: 1.1rem; line-height: 1.6; color: #94a3b8; margin: 0; text-align: center;">
+                    Completa el siguiente formulario para recibir el Dossier Informativo detallado de Berkshire Hathaway o agendar una consulta de orientación personalizada sin compromiso.
+                </p>
+            </div>
+            
+            <!-- Tarjeta contenedora con Glassmorphism y Brillo verde neón Centrada -->
+            <div class="form-container fade-in-up" style="width: 100%; max-width: 550px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(0, 255, 136, 0.15); box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 25px rgba(0, 255, 136, 0.03); border-radius: 12px; padding: 2.5rem; backdrop-filter: blur(10px); margin: 0 auto;">
+                <form id="contact-form" class="elegant-form" action="https://formsubmit.co/f5mediasocial@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    <!-- Campo 1: Nombre y Apellido -->
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem; text-align: left;">
+                        <label for="name" style="font-size: 0.9rem; font-weight: 600; color: #cbd5e1;">Nombre y Apellido</label>
+                        <input type="text" id="name" name="nombre" required placeholder="Ej. Diego Rivero" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 0.8rem 1rem; color: #fff; font-size: 0.95rem; transition: all 0.3s ease;">
+                    </div>
+
+                    <!-- Campo 2: Correo Electrónico -->
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem; text-align: left;">
+                        <label for="email" style="font-size: 0.9rem; font-weight: 600; color: #cbd5e1;">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 0.8rem 1rem; color: #fff; font-size: 0.95rem; transition: all 0.3s ease;">
+                    </div>
+
+                    <!-- Campo 3: Teléfono / WhatsApp -->
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem; text-align: left;">
+                        <label for="phone" style="font-size: 0.9rem; font-weight: 600; color: #cbd5e1;">Teléfono / WhatsApp</label>
+                        <input type="tel" id="phone" name="telefono" required placeholder="+598 99 123 456" style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 0.8rem 1rem; color: #fff; font-size: 0.95rem; transition: all 0.3s ease;">
+                    </div>
+
+                    <!-- Campo 4: Monto estimado a invertir -->
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 0.5rem; text-align: left;">
+                        <label for="monto" style="font-size: 0.9rem; font-weight: 600; color: #cbd5e1;">Monto estimado a invertir</label>
+                        <select id="monto" name="monto_a_invertir" required style="width: 100%; background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 0.8rem 1rem; color: #fff; font-size: 0.95rem; transition: all 0.3s ease; cursor: pointer; appearance: none;">
+                            <option value="" disabled style="color: #64748b;">Selecciona una opción</option>
+                            <option value="Menos de $10.000 USD" style="color: #fff; background: #0F172A;">Menos de $10.000 USD</option>
+                            <option value="$10.000 - $50.000 USD" style="color: #fff; background: #0F172A;">$10.000 - $50.000 USD</option>
+                            <option value="Más de $50.000 USD" style="color: #fff; background: #0F172A;">Más de $50.000 USD</option>
+                        </select>
                     </div>
 
                     <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_next" value="https://www.simple-invest.com/gracias.html">
+                    <input type="hidden" name="_next" value="https://www.pilar-patrimonio.com/gracias.html">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_cc" value="octaviogswedencap@gmail.com">
-                    <input type="hidden" name="_subject" value="Simple Invest - Fondo Warren">
+                    <input type="hidden" name="_cc" value="octaviogswedencap@gmail.com,correa.felipe.1899@gmail.com">
+                    <input type="hidden" name="_subject" value="Pilar Patrimonio - Fondo Warren">
                     <input type="text" name="_honey" style="display:none">
 
-                    <button type="submit" class="btn-primary form-submit-btn" style="margin-top: 1rem;">
-                        <span class="btn-text">Empieza a invertir hoy</span>
+                    <!-- Botón de Envío -->
+                    <button type="submit" class="btn-primary form-submit-btn" style="margin-top: 1rem; background: #00FF88; color: #0A0A0A; border: none; padding: 1rem 2rem; font-size: 1.05rem; font-weight: 700; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 0 20px rgba(0,255,136,0.3); width: 100%;">
+                        <span class="btn-text">Solicitar Información e Informe en PDF →</span>
                         <span class="spinner" style="display: none;">⟳</span>
                     </button>
 
-                    <div class="form-error" style="display: none; color: #e82127; margin-top: 1rem; font-size: 0.9rem;">
-                        Hubo un error al enviar el formulario. Inténtelo nuevamente o contáctenos directamente.</div>
+                    <!-- Micro-texto de privacidad -->
+                    <p style="font-size: 0.75rem; line-height: 1.4; color: #64748b; margin: 0; text-align: center;">
+                        🔒 Tus datos están 100% protegidos. No compartimos tu información con terceros ni enviamos spam.
+                    </p>
+                    
+                    <div class="form-error" style="display: none; color: #e82127; margin-top: 1rem; font-size: 0.9rem; text-align: center;">
+                        Hubo un error al enviar el formulario. Inténtelo nuevamente o contáctenos directamente.
+                    </div>
                 </form>
 
-                <!-- Success Message UI -->
-                <div id="form-success" class="form-success-card">
-                    <div class="success-icon">✦</div>
-                    <h3 style="margin-bottom: 1rem;">Mensaje enviado con éxito</h3>
-                    <p style="color: var(--color-muted); line-height: 1.6;">Gracias por contactarse con nosotros. Un asesor privado revisará su solicitud y nos comunicaremos con usted a la brevedad para brindarle nuestra máxima atención.</p>
+                <!-- Success Message UI (compatible with main.js logic) -->
+                <div id="form-success" class="form-success-card" style="display: none; text-align: center;">
+                    <div class="success-icon" style="font-size: 2.5rem; color: #00FF88; margin-bottom: 1rem;">✦</div>
+                    <h3 style="margin-bottom: 1rem; color: #fff;">Mensaje enviado con éxito</h3>
+                    <p style="color: #94a3b8; line-height: 1.6;">Gracias por contactarse con nosotros. Un asesor privado revisará su solicitud y nos comunicaremos con usted a la brevedad para brindarle nuestra máxima atención.</p>
                 </div>
             </div>
         </div>
+        <style>
+            #contact-form input:focus, #contact-form select:focus {
+                outline: none;
+                border-color: #00FF88 !important;
+                box-shadow: 0 0 10px rgba(0, 255, 136, 0.2) !important;
+                background: rgba(255,255,255,0.05) !important;
+            }
+            .form-submit-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0 25px rgba(0,255,136,0.5) !important;
+                background: #00e577 !important;
+            }
+            @media (max-width: 991px) {
+                #formulario {
+                    padding: 4rem 0 !important;
+                }
+                .form-container {
+                    padding: 1.5rem !important;
+                }
+            }
+        </style>
     </section>
 
     <!-- Footer -->
     <footer class="global-footer section-dark">
         <div class="container fade-in-up">
-            <div class="footer-contact-grid" style="grid-template-columns: 1fr; justify-items: center; max-width: 400px; margin: 0 auto;">
-                <!-- Colombia -->
-                <a href="tel:+5717085340" class="contact-card" style="width: 100%; max-width: 300px;">
+            <div class="footer-contact-grid">
+                <!-- Chile -->
+                <a href="tel:+56233849641" class="contact-card">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
                     </div>
-                    <div class="contact-country">🇨🇴 Colombia</div>
-                    <div class="contact-number">+57 1 708 5340</div>
+                    <div class="contact-country">🇨🇱 Chile</div>
+                    <div class="contact-number">+56 2 3384 9641</div>
+                </a>
+                <!-- Uruguay -->
+                <a href="tel:+59893591326" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-country">🇺🇾 Uruguay</div>
+                    <div class="contact-number">+598 93 591 326</div>
+                </a>
+                <!-- Ecuador -->
+                <a href="tel:+59327085340" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-country">🇪🇨 Ecuador</div>
+                    <div class="contact-number">+593 2 708 5340</div>
                 </a>
             </div>
             <div class="footer-bottom">
-                <div class="footer-logo" style="display: flex; align-items: center; gap: 10px;">
-                    <img src="si-logo-trans.png" alt="Simple Invest" style="height: 30px; width: auto;">
-                    <span class="logo-text">SIMPLE INVEST</span>
+                <div class="footer-logo">
+                    <div class="pilar-monogram">
+                        <div class="pilar-bar pilar-bar-1"></div>
+                        <div class="pilar-bar pilar-bar-2"></div>
+                        <div class="pilar-bar pilar-bar-3"></div>
+                    </div>
+                    <span class="logo-text" style="font-size: 0.75rem;">PILAR PATRIMONIO</span>
                 </div>
                 <div class="footer-links" style="display:flex;">
                     <span style="color:var(--color-gray);">Acceso Institucional</span>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Invest | Oro</title>
+    <title>Pilar Patrimonio | Oro</title>
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <meta name="description"
         content="Invierta en oro y proteja su capital con el activo refugio más seguro y rentable a lo largo de las últimas décadas.">
@@ -23,9 +23,13 @@
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="container navbar-container">
-            <a href="index.html" class="navbar-logo" style="display: flex; align-items: center; gap: 10px;">
-                <img src="si-logo-trans.png" alt="Simple Invest" style="height: 35px; width: auto;">
-                <span class="logo-text">SIMPLE INVEST</span>
+            <a href="index.html" class="navbar-logo">
+                <div class="pilar-monogram">
+                    <div class="pilar-bar pilar-bar-1"></div>
+                    <div class="pilar-bar pilar-bar-2"></div>
+                    <div class="pilar-bar pilar-bar-3"></div>
+                </div>
+                <span class="logo-text">PILAR PATRIMONIO</span>
             </a>
             <div class="menu-toggle">
                 <span class="bar"></span>
@@ -37,8 +41,8 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="fondoia.html" class="dropdown-item">FONDO DE IA</a></li>
-                        <li><a href="fondo-de-inversion.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
+                        <li><a href="ia.html" class="dropdown-item">FONDO DE IA</a></li>
+                        <li><a href="fw.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
                         <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
                         <li><a href="oro.html" class="dropdown-item">ORO</a></li>
                     </ul>
@@ -166,7 +170,7 @@
         </div>
     </section>
 
-    <!-- SECTION 6 — SIMPLE INVEST -->
+    <!-- SECTION 6 — PILAR PATRIMONIO -->
     <section id="pilar" class="pilar-section bg-architecture">
         <div class="bg-overlay-heavy"></div>
         <div class="container container-medium fade-in-up text-center relative-z">
@@ -205,16 +209,16 @@
                             <select id="country-code" name="codigo_pais" required class="country-select">
                                 <option value="+54">🇦🇷 +54</option>
                                 <option value="+598">🇺🇾 +598</option>
-                                <option value="+56">🇨🇱 +56</option>
+                                <option value="+56" selected>🇨🇱 +56</option>
                                 <option value="+55">🇧🇷 +55</option>
                                 <option value="+34">🇪🇸 +34</option>
                                 <option value="+1">🇺🇸 +1</option>
-                                <option value="+593">🇪🇨 +593</option>
+                                <option value="+57">🇨🇴 +57</option>
                                 <option value="+51">🇵🇪 +51</option>
                                 <option value="+595">🇵🇾 +595</option>
                                 <option value="+591">🇧🇴 +591</option>
                                 <option value="+52">🇲🇽 +52</option>
-                                <option value="+57" selected>🇨🇴 +57</option>
+                                <option value="+593">🇪🇨 +593</option>
                             </select>
                             <input type="tel" id="phone" name="telefono" required placeholder="9 1234 5678"
                                 class="phone-input-field">
@@ -228,10 +232,10 @@
                     </div>
 
                     <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_next" value="https://www.simple-invest.com/gracias.html">
+                    <input type="hidden" name="_next" value="https://www.pilar-patrimonio.com/gracias.html">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_cc" value="octaviogswedencap@gmail.com,correa.felipe.1899@gmail.com">
-                    <input type="hidden" name="_subject" value="Simple Invest - Oro">
+                    <input type="hidden" name="_subject" value="Pilar Patrimonio - Oro">
                     <input type="text" name="_honey" style="display:none">
 
                     <button type="submit" class="btn-primary form-submit-btn">
@@ -297,22 +301,46 @@
     <!-- Footer -->
     <footer class="global-footer section-dark">
         <div class="container fade-in-up">
-            <div class="footer-contact-grid" style="grid-template-columns: 1fr; justify-items: center; max-width: 400px; margin: 0 auto;">
-                <!-- Colombia -->
-                <a href="tel:+573009231912" class="contact-card" style="width: 100%; max-width: 300px;">
+            <div class="footer-contact-grid">
+                <!-- Chile -->
+                <a href="tel:+56233849641" class="contact-card">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
                     </div>
-                    <div class="contact-country">🇨🇴 Colombia</div>
-                    <div class="contact-number">+57 300 923 1912</div>
+                    <div class="contact-country">🇨🇱 Chile</div>
+                    <div class="contact-number">+56 2 3384 9641</div>
+                </a>
+                <!-- Uruguay -->
+                <a href="tel:+59893591326" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-country">🇺🇾 Uruguay</div>
+                    <div class="contact-number">+598 93 591 326</div>
+                </a>
+                <!-- Ecuador -->
+                <a href="tel:+59327085340" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-country">🇪🇨 Ecuador</div>
+                    <div class="contact-number">+593 2 708 5340</div>
                 </a>
             </div>
             <div class="footer-bottom">
-                <div class="footer-logo" style="display: flex; align-items: center; gap: 10px;">
-                    <img src="si-logo-trans.png" alt="Simple Invest" style="height: 30px; width: auto;">
-                    <span class="logo-text">SIMPLE INVEST</span>
+                <div class="footer-logo">
+                    <div class="pilar-monogram">
+                        <div class="pilar-bar pilar-bar-1"></div>
+                        <div class="pilar-bar pilar-bar-2"></div>
+                        <div class="pilar-bar pilar-bar-3"></div>
+                    </div>
+                    <span class="logo-text" style="font-size: 0.75rem;">PILAR PATRIMONIO</span>
                 </div>
                 <div class="footer-links" style="display:flex;">
                     <span style="color:var(--color-gray);">Acceso Institucional</span>

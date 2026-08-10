@@ -22,15 +22,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* 1. CONTACT FORM AJAX POST */
-    /*
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+    const forms = document.querySelectorAll('form[action^="https://formsubmit.co"]');
+    forms.forEach(form => {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            // Restored after FormSubmit activation
+            
+            const btn = form.querySelector('button[type="submit"]');
+            let originalText = '';
+            if (btn) {
+                originalText = btn.innerHTML;
+                btn.innerHTML = 'Enviando...';
+                btn.disabled = true;
+            }
+
+            const errorMsg = form.querySelector('.form-error');
+            if (errorMsg) errorMsg.style.display = 'none';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = 'gracias.html';
+                } else {
+                    alert('Ocurrió un error al enviar sus datos. Por favor intente nuevamente.');
+                    if (btn) {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }
+                }
+            }).catch(error => {
+                alert('Error de conexión. Por favor revise su internet y vuelva a intentar.');
+                if (btn) {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }
+            });
         });
-    }
-    */
+    });
 
     /* 2. INTERSECTION OBSERVER FOR FADE-IN */
     const observerOptions = {
