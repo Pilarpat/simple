@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terafab • Simple Invest</title>
+    <meta name="description" content="Tesla, SpaceX y xAI se unifican bajo Terafab: la infraestructura de inteligencia artificial más potente del planeta. Oportunidad de inversión estratégica por Simple Invest.">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .glow-bg-blue {
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        .glow-bg-gold {
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        /* Animación suave de respiración de luz natural (Sin forma de cono) */
+        .spotlight-glow-pulse {
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 70%;
+            background: radial-gradient(ellipse at 50% 15%, rgba(255, 240, 200, 0.45) 0%, rgba(245, 158, 11, 0.18) 40%, transparent 75%);
+            pointer-events: none;
+            z-index: 10;
+            mix-blend-mode: screen;
+            animation: lightPulseGlow 3.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes lightPulseGlow {
+            0% {
+                opacity: 0.25;
+                filter: brightness(0.92);
+            }
+            50% {
+                opacity: 0.9;
+                filter: brightness(1.35);
+            }
+            100% {
+                opacity: 0.35;
+                filter: brightness(1.05);
+            }
+        }
+
+        /* Efecto de Haz de Luz que recorre el borde dejando estela */
+        .border-beam-trail {
+            position: absolute;
+            inset: -200%;
+            background: conic-gradient(from 0deg, transparent 0deg, transparent 290deg, rgba(0, 102, 255, 0.3) 315deg, rgba(6, 182, 212, 0.8) 345deg, rgba(245, 158, 11, 0.95) 357deg, #ffffff 360deg);
+            animation: borderBeamSpin 4s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes borderBeamSpin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#000000] text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- HEADER / NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="si-logo-trans.png" alt="Simple Invest" style="height: 35px; width: auto;">
+                <span class="logo-text" style="margin-left: 10px;">SIMPLE INVEST</span>
+            </a>
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">INICIO</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="terafab.html" class="dropdown-item text-amber-400">TERAFAB ✦</a></li>
+                        <li><a href="fondoia.html" class="dropdown-item">FONDO DE IA</a></li>
+                        <li><a href="fondo-de-inversion.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
+                        <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
+                        <li><a href="oro.html" class="dropdown-item">ORO</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="plataforma.html" class="nav-link">PLATAFORMA</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ================================================================= -->
+    <!-- HERO SECTION - TERAFAB                                            -->
+    <!-- ================================================================= -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#000000] pt-28 pb-16 lg:py-24 px-4 sm:px-6 lg:px-12 border-b border-white/5">
+        
+        <!-- Luces de Fondo (Glow Orbs Ambientales) -->
+        <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] glow-bg-blue pointer-events-none z-0"></div>
+        <div class="absolute bottom-1/3 right-1/4 translate-x-1/3 translate-y-1/3 w-[600px] h-[600px] glow-bg-gold pointer-events-none z-0"></div>
+
+        <!-- Malla sutil de fondo (Grid Pattern) -->
+        <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none opacity-40"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            <!-- ==================== COLUMNA IZQUIERDA ==================== -->
+            <div class="flex flex-col items-start text-left space-y-6 lg:space-y-8 max-w-2xl mx-auto lg:mx-0">
+                
+                <!-- Badge superior -->
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-950/40 border border-blue-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                    <span class="text-xs font-bold tracking-wider text-blue-300 uppercase">
+                        OPORTUNIDAD DE INVERSIÓN ESTRATÉGICA • SIMPLE INVEST
+                    </span>
+                </div>
+
+                <!-- H1 (Titular) -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+                    <span class="bg-gradient-to-r from-white via-blue-400 to-blue-300 bg-clip-text text-transparent drop-shadow-sm">Terafab</span>: La nueva frontera de cómputo que consolidará el <span class="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-600 bg-clip-text text-transparent">imperio de Elon Musk</span>
+                </h1>
+
+                <!-- Subtítulo -->
+                <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-xl">
+                    Tesla, SpaceX y xAI se unifican bajo la infraestructura de inteligencia artificial más potente del planeta. Posiciónate en las compañías clave antes de la próxima gran revalorización.
+                </p>
+
+                <!-- Botón CTA -->
+                <div class="pt-2 w-full sm:w-auto">
+                    <a href="contacto.html" 
+                       class="group relative inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black">
+                        <span>Descubrir la Oportunidad de Inversión</span>
+                        <svg class="w-5 h-5 ml-2.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Texto secundario -->
+                <div class="flex items-center gap-3 pt-2 text-xs sm:text-sm text-slate-400 font-medium">
+                    <div class="flex items-center justify-center w-6 h-6 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <span>Análisis exclusivo de mercado • <strong class="text-slate-200 font-semibold">Plazas limitadas para inversores</strong></span>
+                </div>
+
+            </div>
+
+            <!-- ==================== COLUMNA DERECHA ==================== -->
+            <div class="w-full flex justify-center lg:justify-end">
+                <div id="hero-graphic-placeholder" class="relative w-full aspect-video max-w-xl bg-black rounded-2xl border-0 overflow-hidden shadow-2xl">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover rounded-2xl border-0">
+                        <source src="terafab_video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN: ESCALA MONUMENTAL Y CIFRAS TITÁNICAS                   -->
+    <!-- ================================================================= -->
+    <section class="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-[#000000] border-b border-white/5 overflow-hidden">
+        
+        <!-- Luces de Fondo (Glow Ambientales) -->
+        <div class="absolute top-1/2 left-1/3 -translate-y-1/2 w-[500px] h-[500px] glow-bg-gold pointer-events-none z-0 opacity-60"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] glow-bg-blue pointer-events-none z-0 opacity-40"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            <!-- ==================== COLUMNA IZQUIERDA (MÉTRICAS Y CONTENIDO) ==================== -->
+            <div class="flex flex-col items-start text-left space-y-6 lg:space-y-8 max-w-2xl mx-auto lg:mx-0">
+                
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-amber-950/40 border border-amber-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span class="text-xs font-bold tracking-wider text-amber-300 uppercase">
+                        ESCALA INDUSTRIAL SIN PRECEDENTES
+                    </span>
+                </div>
+
+                <!-- H2 (Titular) -->
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug">
+                    La estructura contigua más grande <span class="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">jamás construida por la humanidad</span>
+                </h2>
+
+                <!-- Grid de 4 Tarjetas de Métricas Highlighted -->
+                <div class="grid grid-cols-2 gap-4 sm:gap-6 w-full pt-2">
+                    
+                    <!-- Métrica 1 -->
+                    <div class="bg-[#121215] border border-white/10 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:border-amber-500/30 hover:shadow-[0_0_25px_rgba(245,158,11,0.1)] group">
+                        <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-amber-400 mb-2 tracking-tight group-hover:scale-105 transition-transform duration-300">
+                            $16,800M
+                        </div>
+                        <div class="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1">USD Inversión Inicial</div>
+                        <p class="text-xs text-slate-400 leading-normal">Capital inicial estimado para el despliegue de la Fase 1.</p>
+                    </div>
+
+                    <!-- Métrica 2 -->
+                    <div class="bg-[#121215] border border-white/10 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:border-blue-500/30 hover:shadow-[0_0_25px_rgba(59,130,246,0.1)] group">
+                        <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-blue-400 mb-2 tracking-tight group-hover:scale-105 transition-transform duration-300">
+                            50x
+                        </div>
+                        <div class="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1">El Pentágono</div>
+                        <p class="text-xs text-slate-400 leading-normal">Volumen físico y área construida superior a cualquier mega-edificación.</p>
+                    </div>
+
+                    <!-- Métrica 3 -->
+                    <div class="bg-[#121215] border border-white/10 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:border-amber-500/30 hover:shadow-[0_0_25px_rgba(245,158,11,0.1)] group">
+                        <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-amber-400 mb-2 tracking-tight group-hover:scale-105 transition-transform duration-300">
+                            #1
+                        </div>
+                        <div class="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1">En el Mundo</div>
+                        <p class="text-xs text-slate-400 leading-normal">La mayor huella industrial e infraestructura integrada del planeta.</p>
+                    </div>
+
+                    <!-- Métrica 4 -->
+                    <div class="bg-[#121215] border border-white/10 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:border-blue-500/30 hover:shadow-[0_0_25px_rgba(59,130,246,0.1)] group">
+                        <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-blue-400 mb-2 tracking-tight group-hover:scale-105 transition-transform duration-300">
+                            24/7
+                        </div>
+                        <div class="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1">Autónoma</div>
+                        <p class="text-xs text-slate-400 leading-normal">Diseñada para operar mediante robótica avanzada y supervisión de IA.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ==================== COLUMNA DERECHA (CONTENEDOR GRÁFICO CON EFECTO DE LUZ) ==================== -->
+            <div class="w-full flex justify-center lg:justify-end">
+                <div id="scale-graphic-placeholder" class="relative w-full max-w-xl min-h-[520px] bg-black rounded-2xl border-0 overflow-hidden shadow-2xl">
+                    <img src="terafab_scale.jpg" alt="Terafab Mega-Facility Escala y Dimensiones" class="w-full h-full object-cover rounded-2xl border-0 relative z-0">
+                    <!-- Resplandor y Movimiento de Luz Natural (Sin Cono) -->
+                    <div class="spotlight-glow-pulse"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 2: EL RESPALDO ESTRATÉGICO DE EE.UU.                     -->
+    <!-- ================================================================= -->
+    <section class="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-[#09090b] border-b border-white/5 overflow-hidden">
+        
+        <!-- Luces de Fondo (Glow Ambientales) -->
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[450px] h-[450px] glow-bg-gold pointer-events-none z-0 opacity-70"></div>
+        <div class="absolute bottom-10 right-10 w-[350px] h-[350px] glow-bg-blue pointer-events-none z-0 opacity-50"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            <!-- ==================== COLUMNA IZQUIERDA (CONTENEDOR GRÁFICO) ==================== -->
+            <div class="w-full flex justify-center lg:justify-start order-2 lg:order-1">
+                <div id="us-support-graphic-placeholder" class="relative w-full aspect-video max-w-xl bg-black rounded-2xl border-0 overflow-hidden shadow-2xl">
+                    <img src="terafab_us_support.jpg" alt="Soberanía Tecnológica y Seguridad Nacional EE.UU." class="w-full h-full object-cover rounded-2xl border-0">
+                </div>
+            </div>
+
+            <!-- ==================== COLUMNA DERECHA (CONTENIDO GEOPOLÍTICO) ==================== -->
+            <div class="flex flex-col items-start text-left space-y-6 lg:space-y-8 max-w-2xl mx-auto lg:mx-0 order-1 lg:order-2">
+                
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-amber-950/40 border border-amber-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span class="text-xs font-bold tracking-wider text-amber-300 uppercase">
+                        SOBERANÍA TECNOLÓGICA Y SEGURIDAD NACIONAL
+                    </span>
+                </div>
+
+                <!-- H2 (Titular) -->
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug">
+                    Un proyecto con rango de prioridad nacional e <span class="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">interés geopolítico</span>
+                </h2>
+
+                <!-- Texto Introductorio -->
+                <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+                    La carrera global por el dominio de la Inteligencia Artificial y la soberanía de semiconductores no es solo una batalla comercial: es un asunto de seguridad nacional para los Estados Unidos.
+                </p>
+
+                <!-- Lista de 3 Puntos Clave -->
+                <ul class="space-y-5 w-full pt-2">
+                    
+                    <!-- Punto 1 -->
+                    <li class="flex items-start gap-4 group">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mt-1 transition-colors duration-300 group-hover:bg-blue-500/20 group-hover:border-blue-400">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                            <strong class="text-white font-semibold">Soberanía tecnológica:</strong> Terafab posiciona a EE.UU. a la cabeza de la producción de cómputo masivo, reduciendo drásticamente la dependencia de cadenas de suministro extranjeras.
+                        </p>
+                    </li>
+
+                    <!-- Punto 2 -->
+                    <li class="flex items-start gap-4 group">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mt-1 transition-colors duration-300 group-hover:bg-amber-500/20 group-hover:border-amber-400">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                            <strong class="text-white font-semibold">Respaldo e incentivos gubernamentales:</strong> Proyectos de esta magnitud cuentan con viento a favor regulatorio, beneficios fiscales, subsidios de infraestructura y acceso prioritario a la red energética.
+                        </p>
+                    </li>
+
+                    <!-- Punto 3 -->
+                    <li class="flex items-start gap-4 group">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mt-1 transition-colors duration-300 group-hover:bg-blue-500/20 group-hover:border-blue-400">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.6 15.11a2 2 0 01-1.023-.547l-1.414-1.414a2 2 0 010-2.828l1.414-1.414a2 2 0 011.022-.547l2.388-.477a6 6 0 003.86-.517l.318-.158a6 6 0 013.86-.517l2.388.477a2 2 0 011.022.547l1.414 1.414a2 2 0 010 2.828l-1.414 1.414z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                            <strong class="text-white font-semibold">Sinergia con Defensa y Aeroespacio:</strong> La integración de la potencia de Terafab con la infraestructura orbital de SpaceX (Starlink y defensa) convierte a este ecosistema en un activo crítico e insustituible.
+                        </p>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 3: EL TRIDENTE TECNOLÓGICO                              -->
+    <!-- ================================================================= -->
+    <section class="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-[#000000] border-b border-white/5 overflow-hidden">
+        
+        <!-- Luces de Fondo (Glow Ambientales) -->
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] glow-bg-blue pointer-events-none z-0 opacity-60"></div>
+        <div class="absolute bottom-10 right-1/4 w-[400px] h-[400px] glow-bg-gold pointer-events-none z-0 opacity-40"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
+            
+            <!-- 1. Encabezado de Sección (Centrado) -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-950/40 border border-blue-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.2)] mb-6">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span class="text-xs font-bold tracking-wider text-blue-300 uppercase">
+                    EL TRIDENTE DEL ECOSISTEMA
+                </span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-3xl leading-tight mb-6">
+                La Sinergia Tripartita: <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-400 bg-clip-text text-transparent">Tesla, SpaceX y xAI</span>
+            </h2>
+
+            <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mb-12">
+                Terafab no funciona de forma aislada. Es la columna vertebral que interconecta y acelera el valor de las tres compañías más disruptivas de la década.
+            </p>
+
+            <!-- 2. Contenedor Gráfico (Centrado) con Estela de Luz en Borde (Border Beam Trail) -->
+            <div class="w-full max-w-4xl mx-auto mb-16">
+                <div class="relative p-[2px] rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.12)] group">
+                    <!-- Haz de luz giratorio que recorre todo el borde dejando estela -->
+                    <div class="border-beam-trail"></div>
+                    
+                    <!-- Contenedor interno de la imagen -->
+                    <div id="trident-graphic-placeholder" class="relative w-full aspect-video max-w-4xl bg-black rounded-[14px] border-0 overflow-hidden z-10">
+                        <img src="terafab_trident.jpg" alt="El Tridente Tecnológico: Tesla, xAI y SpaceX Interconectados" class="w-full h-full object-cover rounded-[14px] border-0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Rejilla de 3 Tarjetas de Impacto (Tesla, SpaceX, xAI) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full text-left">
+                
+                <!-- Tarjeta 1: Tesla -->
+                <div class="relative bg-[#121215] border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 hover:border-red-500/40 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(239,68,68,0.1)] group">
+                    <div>
+                        <div class="inline-flex items-center px-3 py-1 rounded-md bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold tracking-widest uppercase mb-4">
+                            TESLA
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors">
+                            Robótica y Autonomía Masiva
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            <strong class="text-slate-100">Impacto:</strong> Aceleración drástica en el entrenamiento de FSD (Full Self-Driving), Robotaxis y la red del robot humanoide Optimus.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Catalizador de Valor</span>
+                        <p class="text-xs text-slate-300 leading-snug">
+                            Transición acelerada de fabricante automotriz a gigante global de Robótica e Inteligencia Artificial.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: SpaceX -->
+                <div class="relative bg-[#121215] border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group">
+                    <div>
+                        <div class="inline-flex items-center px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold tracking-widest uppercase mb-4">
+                            SPACEX
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
+                            Infraestructura Aeroespacial
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            <strong class="text-slate-100">Impacto:</strong> Integración de modelos de IA para logística orbital, defensa con Starshield y operaciones en tiempo real de Starlink.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Catalizador de Valor</span>
+                        <p class="text-xs text-slate-300 leading-snug">
+                            Consolidación del dominio absoluto del sector aeroespacial privado y comercial.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: xAI -->
+                <div class="relative bg-[#121215] border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 hover:border-amber-500/40 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(245,158,11,0.1)] group">
+                    <div>
+                        <div class="inline-flex items-center px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-widest uppercase mb-4">
+                            xAI
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
+                            Supercómputo y AGI
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            <strong class="text-slate-100">Impacto:</strong> Capacidad de cálculo masiva e ilimitada para escalar las próximas generaciones de Grok frente a la competencia.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Catalizador de Valor</span>
+                        <p class="text-xs text-slate-300 leading-snug">
+                            Captura directa del valor en el mercado de las empresas líderes de Frontera en IA.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN: CAPACIDAD PRODUCTIVA E INDEPENDENCIA TECNOLÓGICA        -->
+    <!-- ================================================================= -->
+    <section class="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-[#000000] border-b border-white/5 overflow-hidden">
+        
+        <!-- Luces de Fondo (Glow Ambientales) -->
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[450px] h-[450px] glow-bg-blue pointer-events-none z-0 opacity-60"></div>
+        <div class="absolute bottom-10 right-10 w-[350px] h-[350px] glow-bg-gold pointer-events-none z-0 opacity-40"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            <!-- ==================== COLUMNA IZQUIERDA (CONTENEDOR GRÁFICO CON VIDEO ANIMACIÓN) ==================== -->
+            <div class="w-full flex justify-center lg:justify-start order-2 lg:order-1">
+                <div id="capacity-graphic-placeholder" class="relative w-full aspect-video max-w-xl bg-black rounded-2xl border-0 overflow-hidden shadow-2xl">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover rounded-2xl border-0">
+                        <source src="terafab_capacity_video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- ==================== COLUMNA DERECHA (CONTENIDO DE CAPACIDAD DE PRODUCCIÓN) ==================== -->
+            <div class="flex flex-col items-start text-left space-y-6 lg:space-y-8 max-w-2xl mx-auto lg:mx-0 order-1 lg:order-2">
+                
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-950/40 border border-blue-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                    <span class="text-xs font-bold tracking-wider text-blue-300 uppercase">
+                        MONOPOLIO PRODUCTIVO Y ENERGÉTICO
+                    </span>
+                </div>
+
+                <!-- H2 (Titular) -->
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug">
+                    Capaz de producir más microchips avanzados que <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-200 bg-clip-text text-transparent">el resto del planeta combinado</span>
+                </h2>
+
+                <!-- Texto Introductorio -->
+                <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+                    Terafab rompe los cuellos de botella de la industria global de semiconductores centralizando la cadena de suministro de litografía, procesamiento y ensamblaje bajo un mismo techo.
+                </p>
+
+                <!-- 3 Puntos Destacados -->
+                <ul class="space-y-5 w-full pt-2">
+                    
+                    <!-- Punto 1 -->
+                    <li class="flex items-start gap-4 group">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mt-1 transition-colors duration-300 group-hover:bg-blue-500/20 group-hover:border-blue-400">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                            <strong class="text-white font-semibold">Rendimiento Inigualable:</strong> Procesamiento masivo de obleas de silicio optimizadas exclusivamente para arquitectura de redes neuronales y cómputo de frontera.
+                        </p>
+                    </li>
+
+                    <!-- Punto 2 -->
+                    <li class="flex items-start gap-4 group">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mt-1 transition-colors duration-300 group-hover:bg-amber-500/20 group-hover:border-amber-400">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                            <strong class="text-white font-semibold">Sostenibilidad y Energía Redundante:</strong> Infraestructura respaldada por microrreactores y energía limpia dedicada para garantizar operación ininterrumpida frente a crisis energéticas.
+                        </p>
+                    </li>
+
+                    <!-- Punto 3 -->
+                    <li class="flex items-start gap-4 group">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mt-1 transition-colors duration-300 group-hover:bg-blue-500/20 group-hover:border-blue-400">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                            <strong class="text-white font-semibold">Ventaja Competitiva Inalcanzable:</strong> Reduce el ciclo de entrenamiento de nuevos modelos de IA de meses a días, dejando atrás a competidores tradicionales de la industria.
+                        </p>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 6: REGULACIÓN Y RESPALDO INSTITUCIONAL                  -->
+    <!-- ================================================================= -->
+    <section class="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-[#000000] border-b border-white/5 overflow-hidden">
+        
+        <!-- Luces de Fondo (Glow Ambientales) -->
+        <div class="absolute top-1/2 left-1/3 -translate-y-1/2 w-[550px] h-[550px] glow-bg-blue pointer-events-none z-0 opacity-50"></div>
+        <div class="absolute bottom-10 right-10 w-[450px] h-[450px] glow-bg-gold pointer-events-none z-0 opacity-40"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
+            
+            <!-- Eyebrow Badge -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-950/40 border border-blue-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(59,130,246,0.2)] mb-6">
+                <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                <span class="text-xs font-bold tracking-wider text-blue-300 uppercase">
+                    MARCO NORMATIVO Y SEGURIDAD CAPITAL
+                </span>
+            </div>
+
+            <!-- H2 (Titular) -->
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-3xl leading-tight mb-6">
+                Regulación y Respaldo <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-amber-400 bg-clip-text text-transparent">Institucional</span>
+            </h2>
+
+            <!-- Subtítulo / Descripción Legal -->
+            <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-3xl mb-12">
+                XYN Capital es operada por GFI BROKERS (CHILE) AGENTES DE VALORES SPA, RUT 76.017.206-5, domicilio fiscal Av. isidora Goyenechea 3162 Of 203, autorizada por la Comisión para el Mercado Financiero (CMF), exclusivamente respecto a servicios de enrutamiento de órdenes.
+            </p>
+
+            <!-- Grid de 3 Pilares de Seguridad -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full text-left mb-12">
+                
+                <!-- Pilar 1: Segregación de Fondos -->
+                <div class="bg-[#121215] border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 hover:border-amber-500/30 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(245,158,11,0.1)] group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            🛑
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
+                            Segregación de Fondos
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Por requerimientos normativos de la CMF, todos los fondos de los clientes se custodian en cuentas bancarias totalmente segregadas de las cuentas operativas de la compañía. Su capital está estrictamente resguardado.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pilar 2: Protección al Inversor -->
+                <div class="bg-[#121215] border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 hover:border-blue-500/30 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            🤝
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
+                            Protección al Inversor
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            El marco de supervisión chileno proporciona a todos los inversores un esquema que asegura la transparencia de las transacciones y la absoluta integridad de los depósitos efectuados.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pilar 3: Supervisión Constante -->
+                <div class="bg-[#121215] border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 hover:border-amber-500/30 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(245,158,11,0.1)] group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            🔎
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
+                            Supervisión Constante
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Sometida a auditorías financieras y de cumplimiento periódicas por la CMF, la plataforma garantiza el estricto apego a las normativas de solvencia y conducta comercial internacionales.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Caja de Información Legal de Registro -->
+            <div class="w-full bg-[#0d0d11] border border-white/10 rounded-2xl p-6 sm:p-8 text-center text-xs sm:text-sm text-slate-400 leading-relaxed max-w-4xl shadow-lg">
+                <p>
+                    <strong class="text-slate-200 font-semibold">Información Legal de Registro:</strong> XYN Capital es operada por GFI BROKERS (CHILE) AGENTES DE VALORES SPA, RUT 76.017.206-5, domicilio fiscal Av. isidora Goyenechea 3162 Of 203, autorizada por la Comisión para el Mercado Financiero (CMF), exclusivamente respecto a servicios de enrutamiento de órdenes.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 7: EJECUCIÓN INSTITUCIONAL Y TIEMPOS DEL SISTEMA         -->
+    <!-- ================================================================= -->
+    <section class="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-[#09090b] border-b border-white/5 overflow-hidden">
+        
+        <!-- Luces de Fondo (Glow Ambientales) -->
+        <div class="absolute top-1/3 right-1/4 w-[500px] h-[500px] glow-bg-gold pointer-events-none z-0 opacity-50"></div>
+        <div class="absolute bottom-10 left-10 w-[400px] h-[400px] glow-bg-blue pointer-events-none z-0 opacity-40"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full space-y-16 lg:space-y-24">
+            
+            <!-- Parte 1: Grid 2 Columnas - Ejecución Institucional & Mockup Plataforma -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Columna Izquierda: Texto de Ejecución Institucional -->
+                <div class="flex flex-col items-start text-left space-y-6 lg:space-y-8 max-w-2xl mx-auto lg:mx-0">
+                    
+                    <!-- Eyebrow Badge -->
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-amber-950/40 border border-amber-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        <span class="text-xs font-bold tracking-wider text-amber-300 uppercase">
+                            VENTAJA COMPETITIVA Y ACCESO PRIVILEGIADO
+                        </span>
+                    </div>
+
+                    <!-- H2 (Titular) -->
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                        Ejecución Institucional. <br>
+                        <span class="bg-gradient-to-r from-amber-300 via-amber-400 to-blue-400 bg-clip-text text-transparent">Acceso Privilegiado.</span>
+                    </h2>
+
+                    <!-- Texto de la Sección -->
+                    <div class="space-y-4 text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+                        <p>
+                            Un evento de esta magnitud genera un <em class="text-white font-medium not-italic">hype</em> desmesurado en el mercado minorista. Mientras el inversor tradicional espera el toque de campana, expuesto a la volatilidad extrema y la especulación de los primeros días de cotización, el patrimonio sofisticado requiere anticipación.
+                        </p>
+                        <p>
+                            A través de la infraestructura avanzada de <strong class="text-white font-semibold">Xyncap</strong>, Simple Invest estructura el canal adecuado y regulado bajo la Comisión para el Mercado Financiero (CMF) para que usted participe de este hito con ejecución instantánea y seguridad garantizada.
+                        </p>
+                        <p class="text-slate-200 font-semibold border-l-2 border-amber-400 pl-4 py-1 bg-amber-500/5 rounded-r-lg">
+                            Le ofrecemos la arquitectura financiera necesaria para posicionar su capital con la discreción, la seguridad institucional y la visión a largo plazo que su portafolio exige.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Columna Derecha: Mockup de la Plataforma (Reducida 40%) -->
+                <div class="w-full flex justify-center lg:justify-end">
+                    <div id="platform-graphic-placeholder" class="relative w-full max-w-xs sm:max-w-[290px] bg-[#121215] rounded-3xl border border-white/10 shadow-2xl p-3 overflow-hidden group transition-all duration-500 hover:border-amber-500/30 hover:shadow-[0_0_50px_rgba(245,158,11,0.15)] mx-auto lg:mr-0">
+                        <div class="relative rounded-2xl overflow-hidden bg-black">
+                            <img src="xyncap-mockup.jpg" alt="Xyncap Platform Interface" class="w-full h-auto object-cover rounded-2xl">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Parte 2: Tiempos del Sistema - Anticipación Estratégica (3 Pasos) -->
+            <div class="pt-8 border-t border-white/10">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">
+                        Tienes que llegar antes.
+                    </h3>
+                    <p class="text-base text-slate-300 leading-relaxed">
+                        En oportunidades de esta escala, llegar un día tarde es exactamente igual a no haber llegado nunca. Mientras el público general espera la cotización pública, los inversores estratégicos aseguran su posición antes del cierre.
+                    </p>
+                </div>
+
+                <!-- Grid de 3 Pasos del Proceso -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <!-- Paso 1 -->
+                    <div class="bg-[#121215] border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 hover:border-amber-500/30 hover:-translate-y-1 group">
+                        <div>
+                            <div class="text-3xl font-black text-amber-400 mb-4 tracking-tight">01</div>
+                            <h4 class="text-lg font-bold text-white mb-1">Verificación de Identidad</h4>
+                            <span class="text-xs font-semibold text-slate-400 block mb-3">(24 a 48 horas)</span>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Por regulaciones financieras internacionales, toda cuenta nueva debe pasar por strictly protocolos de seguridad y validación.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="bg-[#121215] border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 hover:border-blue-500/30 hover:-translate-y-1 group">
+                        <div>
+                            <div class="text-3xl font-black text-blue-400 mb-4 tracking-tight">02</div>
+                            <h4 class="text-lg font-bold text-white mb-1">Compensación de Fondos</h4>
+                            <span class="text-xs font-semibold text-slate-400 block mb-3">(hasta 5 días hábiles)</span>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Las transferencias de capital no son instantáneas. Su dinero necesita tiempo para liquidarse y estar disponible en el fondo antes de la fecha de corte.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="bg-[#121215] border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 hover:border-amber-500/30 hover:-translate-y-1 group">
+                        <div>
+                            <div class="text-3xl font-black text-amber-400 mb-4 tracking-tight">03</div>
+                            <h4 class="text-lg font-bold text-white mb-1">Asignación de Posición</h4>
+                            <span class="text-xs font-semibold text-slate-400 block mb-3">(Cierre estricto)</span>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Una vez que se alcanza el límite de capital asignado o la fecha límite previa a la salida a mercado, las puertas se cierran por completo.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center pt-10">
+                    <p class="text-base sm:text-lg font-semibold text-amber-300">
+                        Inicia tu proceso de apertura de cuenta hoy mismo y asegura tu lugar antes del cierre.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 8: FORMULARIO DE CONVERSIÓN Y CIERRE                     -->
+    <!-- ================================================================= -->
+    <section id="contacto" class="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-[#09090b] border-b border-white/5 overflow-hidden">
+        
+        <!-- Luces de Fondo (Glow Ambientales) -->
+        <div class="absolute top-1/2 left-1/3 -translate-y-1/2 w-[550px] h-[550px] glow-bg-gold pointer-events-none z-0 opacity-50"></div>
+        <div class="absolute bottom-10 right-10 w-[450px] h-[450px] glow-bg-blue pointer-events-none z-0 opacity-60"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full">
+            
+            <!-- Contenedor Elevado de Contraste -->
+            <div class="bg-[#0d0d11] border border-amber-500/20 rounded-3xl p-6 sm:p-10 lg:p-14 shadow-[0_0_50px_rgba(245,158,11,0.08)] relative overflow-hidden max-w-3xl mx-auto">
+                
+                <div class="flex flex-col items-center text-center space-y-6 max-w-2xl mx-auto">
+                    
+                    <!-- Eyebrow Badge -->
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-amber-950/40 border border-amber-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.15)]">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        <span class="text-xs font-bold tracking-wider text-amber-300 uppercase">
+                            ACCESO EXCLUSIVO A INVERSORES
+                        </span>
+                    </div>
+
+                    <!-- H2 (Titular) -->
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug">
+                        Toma posición en la infraestructura que <span class="bg-gradient-to-r from-amber-300 via-amber-400 to-blue-400 bg-clip-text text-transparent">definirá la próxima década</span>
+                    </h2>
+
+                    <!-- Subtítulo -->
+                    <p class="text-base text-slate-300 font-normal leading-relaxed">
+                        Recibe el análisis estratégico completo de Simple Invest con la tesis detallada de inversión sobre Terafab, valoración de mercado y proyecciones de entrada.
+                    </p>
+
+                    <!-- Formulario de Captura de Leads -->
+                    <form action="gracias.html" method="GET" class="w-full space-y-4 pt-2 text-left">
+                        
+                        <!-- Campo 1: Nombre -->
+                        <div>
+                            <label for="nombre" class="block text-xs font-medium text-slate-300 mb-1.5">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre"
+                                   class="w-full px-4 py-3.5 rounded-xl bg-[#121215] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all duration-200">
+                        </div>
+
+                        <!-- Campo 2: Email -->
+                        <div>
+                            <label for="email" class="block text-xs font-medium text-slate-300 mb-1.5">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com"
+                                   class="w-full px-4 py-3.5 rounded-xl bg-[#121215] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all duration-200">
+                        </div>
+
+                        <!-- Campo 3: Teléfono con Característica de País -->
+                        <div>
+                            <label for="telefono" class="block text-xs font-medium text-slate-300 mb-1.5">Teléfono / WhatsApp</label>
+                            <div class="flex gap-2">
+                                <select id="codigo_pais" name="codigo_pais" required 
+                                        class="px-3 py-3.5 rounded-xl bg-[#121215] border border-white/10 text-white text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all duration-200 cursor-pointer">
+                                    <option value="+56" selected>🇨🇱 +56</option>
+                                    <option value="+54">🇦🇷 +54</option>
+                                    <option value="+598">🇺🇾 +598</option>
+                                    <option value="+55">🇧🇷 +55</option>
+                                    <option value="+34">🇪🇸 +34</option>
+                                    <option value="+1">🇺🇸 +1</option>
+                                    <option value="+57">🇨🇴 +57</option>
+                                    <option value="+51">🇵🇪 +51</option>
+                                    <option value="+595">🇵🇾 +595</option>
+                                    <option value="+591">🇧🇴 +591</option>
+                                    <option value="+52">🇲🇽 +52</option>
+                                    <option value="+593">🇪🇨 +593</option>
+                                </select>
+                                <input type="tel" id="telefono" name="telefono" required placeholder="9 1234 5678"
+                                       class="flex-1 px-4 py-3.5 rounded-xl bg-[#121215] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-all duration-200">
+                            </div>
+                        </div>
+
+                        <!-- Botón CTA Principal -->
+                        <button type="submit"
+                                class="w-full mt-2 py-4 px-6 rounded-xl font-bold text-white bg-gradient-to-r from-amber-500 via-blue-600 to-indigo-600 hover:from-amber-400 hover:via-blue-500 hover:to-indigo-500 shadow-lg shadow-amber-500/20 hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-black cursor-pointer text-base">
+                            Solicitar Reporte y Acceso Preferencial →
+                        </button>
+
+                        <!-- Micro-copy de confianza -->
+                        <div class="text-center pt-2 text-xs text-slate-400 font-medium">
+                            <span>🔒 Privacidad garantizada • Análisis 100% gratuito • Sin compromiso.</span>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Footer / Copyright sutil de cierre -->
+            <div class="text-center mt-12 text-xs text-slate-500">
+                <p>© 2026 Simple Invest. Todos los derechos reservados. Análisis de mercados e inversiones estratégicas.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" style="padding: 4rem 0 2rem 0; border-top: 1px solid rgba(255,255,255,0.05); background: #000;">
+        <div class="container">
+            <div class="footer-grid" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+                <div class="footer-brand">
+                    <span class="logo-text" style="font-size: 0.9rem; font-weight: 700;">SIMPLE INVEST</span>
+                    <p style="color: var(--color-muted); font-size: 0.85rem; margin-top: 0.5rem;">Gestión Patrimonial &amp; Acceso a Oportunidades Globales</p>
+                </div>
+                <div class="footer-links" style="display: flex; gap: 1.5rem; font-size: 0.85rem;">
+                    <a href="index.html" style="color: var(--color-gray);">Inicio</a>
+                    <a href="terafab.html" style="color: #60a5fa;">Terafab</a>
+                    <a href="fondoia.html" style="color: var(--color-gray);">Fondo IA</a>
+                    <a href="spacex.html" style="color: var(--color-gray);">SpaceX</a>
+                    <a href="contacto.html" style="color: var(--color-gray);">Contacto</a>
+                </div>
+            </div>
+            <div class="footer-legal" style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem;">
+                <p style="color: var(--color-gray); max-width: 800px; margin: 0 auto 1.5rem auto; line-height: 1.6;">XYN Capital es operada por GFI BROKERS (CHILE) AGENTES DE VALORES SPA, RUT 76.017.206-5, domicilio fiscal Av. isidora Goyenechea 3162 Of 203, autorizada por la Comisión para el Mercado Financiero (CMF), exclusivamente respecto a servicios de enrutamiento de órdenes.</p>
+                <a href="politica-de-privacidad.html" style="color: var(--color-gray); text-decoration: none;">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
