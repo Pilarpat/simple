@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Invest | Moderna</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <meta name="description"
+        content="Moderna y la Revolución mRNA: El hito médico que abre la próxima gran frontera de revalorización en Biotecnología. Oportunidad de inversión estratégica por Simple Invest.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2.1">
+
+    <style>
+        /* SPACEX ESTHETIC OVERRIDES & HIGHLIGHTS */
+        .hero-spacex {
+            background: #000000;
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-spacex::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero-badge-spacex {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+        }
+
+        .badge-dot-pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #06b6d4;
+            box-shadow: 0 0 10px #06b6d4;
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.4; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0.4; transform: scale(0.9); }
+        }
+
+        .btn-spacex-glow {
+            background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .btn-spacex-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(6, 182, 212, 0.55);
+            background: linear-gradient(135deg, #0891b2 0%, #1d4ed8 100%);
+            color: #ffffff;
+        }
+
+        .gradient-cyan-text {
+            background: linear-gradient(90deg, #ffffff 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-gold-text {
+            background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="si-logo-trans.png" alt="Simple Invest" style="height: 35px; width: auto;">
+                <span class="logo-text" style="margin-left: 10px;">SIMPLE INVEST</span>
+            </a>
+            <div class="menu-toggle">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">INICIO</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="moderna.html" class="dropdown-item">MODERNA</a></li>
+                        <li><a href="terafab.html" class="dropdown-item">TERAFAB</a></li>
+                        <li><a href="fondoia.html" class="dropdown-item">FONDO DE IA</a></li>
+                        <li><a href="fondo-de-inversion.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
+                        <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
+                        <li><a href="oro.html" class="dropdown-item">ORO</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="plataforma.html" class="nav-link">PLATAFORMA</a></li>
+                <li class="nav-item"><a href="index.html#servicios" class="nav-link">SERVICIOS</a></li>
+                <li class="nav-item"><a href="apertura.html" class="nav-link">APERTURA</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO (ESTÉTICA SPACEX) -->
+    <section id="hero" class="hero section-dark hero-spacex">
+        <div class="container two-column-grid hero-grid" style="position:relative; z-index:2; align-items: center; width: 100%;">
+            
+            <!-- Columna Izquierda (Texto y Conversión) -->
+            <div class="hero-text fade-in-up" style="text-align: left;">
+                
+                <!-- Badge superior -->
+                <div class="hero-badge-spacex">
+                    <span class="badge-dot-pulse"></span>
+                    <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; color: #06b6d4; text-transform: uppercase;">
+                        OPORTUNIDAD DE INVERSIÓN ESTRATÉGICA • SIMPLE INVEST
+                    </span>
+                </div>
+
+                <!-- H1 (Titular) -->
+                <h1 class="hero-title" style="font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 700; line-height: 1.2; color: #ffffff; margin-bottom: 1.5rem;">
+                    <span class="gradient-cyan-text">Moderna</span> y la Revolución contra el <span class="gradient-gold-text">Melanoma</span>: El hito médico para invertir hoy
+                </h1>
+
+                <!-- Subtítulo -->
+                <p class="hero-subheadline" style="color: var(--color-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; max-width: 620px;">
+                    El inicio de las fases decisivas para la primera vacuna personalizada contra el cáncer de piel marca un punto de inflexión histórico. Posiciona tu capital en la transición estratégica de Moderna antes de la revalorización del sector oncológico.
+                </p>
+
+                <!-- Botón CTA con efecto hover y brillo ambiental -->
+                <div class="hero-actions" style="margin-bottom: 1.5rem;">
+                    <a href="contacto.html" class="btn-spacex-glow">
+                        <span>Descubrir la Tesis de Inversión</span>
+                        <span style="font-size: 1.2rem; line-height: 1;">→</span>
+                    </a>
+                </div>
+
+                <!-- Texto secundario de confianza -->
+                <p style="font-size: 0.85rem; color: var(--color-muted); margin: 0; display: flex; align-items: center; gap: 8px;">
+                    <span style="color: #06b6d4; font-size: 1rem;">✦</span> 
+                    Análisis exclusivo de mercado • <strong style="color: #ffffff; font-weight: 600;">Acceso prioritario para inversores privados</strong>
+                </p>
+
+            </div>
+
+            <!-- Columna Derecha (Video Multimedia Animación Autoplay) -->
+            <div class="col-visual fade-in-up delay-1" style="display: flex; align-items: center; justify-content: flex-end; width: 100%;">
+                <div id="hero-graphic-placeholder" 
+                     style="width: 100%; max-width: 600px; aspect-ratio: 16 / 9; background-color: #121215; border-radius: 16px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); overflow: hidden; position: relative;">
+                    <video autoplay loop muted playsinline 
+                           style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block;">
+                        <source src="moderna-hero.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 2: ESCALA DEL MERCADO Y CATALIZADOR CLÍNICO              -->
+    <!-- ================================================================= -->
+    <section id="catalizador" class="section-dark border-top" style="background: #09090b; padding: 6rem 0; position: relative; overflow: hidden; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container two-column-grid" style="align-items: center; gap: 4rem;">
+            
+            <!-- Columna Izquierda (Rejilla de 4 Tarjetas de Métricas 2x2) -->
+            <div class="fade-in-up" style="width: 100%;">
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                    
+                    <!-- Tarjeta 1 -->
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
+                        <div style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;" class="gradient-gold-text">
+                            -44% de Riesgo
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--color-muted); line-height: 1.5; margin: 0;">
+                            Reducción en la recurrencia de melanoma o muerte frente al tratamiento estándar actual.
+                        </p>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
+                        <div style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;" class="gradient-cyan-text">
+                            $15,000M+ USD
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--color-muted); line-height: 1.5; margin: 0;">
+                            Mercado potencial estimado para terapias personalizadas de oncología mRNA.
+                        </p>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
+                        <div style="font-size: 1.75rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">
+                            FDA Fast Track
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--color-muted); line-height: 1.5; margin: 0;">
+                            Designación de Terapia Innovadora concedida para acelerar su aprobación comercial.
+                        </p>
+                    </div>
+
+                    <!-- Tarjeta 4 -->
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
+                        <div style="font-size: 1.75rem; font-weight: 800; color: #06b6d4; margin-bottom: 0.5rem;">
+                            +30 Proyectos
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--color-muted); line-height: 1.5; margin: 0;">
+                            Cadena de producción (pipeline) activa aplicable a otros tipos de tumores sólidos.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Columna Derecha (Texto e Introducción) -->
+            <div class="fade-in-up delay-1" style="text-align: left;">
+                
+                <!-- Eyebrow Badge -->
+                <div class="hero-badge-spacex">
+                    <span class="badge-dot-pulse"></span>
+                    <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; color: #06b6d4; text-transform: uppercase;">
+                        CATALIZADOR CLÍNICO Y FINANCIERO
+                    </span>
+                </div>
+
+                <!-- H2 (Titular) -->
+                <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; line-height: 1.25; color: #ffffff; margin-bottom: 1.5rem; text-align: left;">
+                    De la respuesta pandémica a la conquista de la <span class="gradient-cyan-text">oncología masiva</span>
+                </h2>
+
+                <!-- Texto Introductorio -->
+                <p style="color: var(--color-muted); font-size: 1.05rem; line-height: 1.6; margin: 0; max-width: 600px;">
+                    Los ensayos clínicos de la vacuna mRNA-4157 (V940) en combinación con terapias inmunitarias han demostrado una reducción drástica en la recurrencia del melanoma agresivo, transformando un concepto científico en un mercado multi-billonario.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 3: EL TRIDENTE DE CRECIMIENTO                             -->
+    <!-- ================================================================= -->
+    <section id="tridente" class="section-dark border-top" style="background: #000000; padding: 6rem 0; position: relative; overflow: hidden; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        
+        <!-- Glow Orbs Ambientales -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] glow-bg-cyan pointer-events-none z-0 opacity-30"></div>
+
+        <div class="container fade-in-up" style="position: relative; z-index: 2;">
+            
+            <!-- Encabezado de Sección (Centrado) -->
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3.5rem auto;">
+                
+                <!-- Eyebrow Badge -->
+                <div class="hero-badge-spacex" style="margin-left: auto; margin-right: auto;">
+                    <span class="badge-dot-pulse"></span>
+                    <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; color: #06b6d4; text-transform: uppercase;">
+                        SISTEMA DE VENTAJA COMPETITIVA
+                    </span>
+                </div>
+
+                <!-- H2 (Titular) -->
+                <h2 class="section-title" style="font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.2; color: #ffffff; margin-bottom: 1.25rem; text-align: center;">
+                    Los tres pilares que sostienen la tesis de inversión en <span class="gradient-cyan-text">Moderna</span>
+                </h2>
+
+                <!-- Subtítulo -->
+                <p style="color: var(--color-muted); font-size: 1.1rem; line-height: 1.6; margin: 0 auto; max-width: 650px;">
+                    Esta oportunidad no depende de un solo producto, sino de una arquitectura tecnológica y comercial ya validada.
+                </p>
+
+            </div>
+
+            <!-- Contenedor Gráfico (Centrado con Video Autoplay) -->
+            <div style="width: 100%; max-width: 900px; margin: 0 auto 4rem auto;">
+                <div id="trident-graphic-placeholder" 
+                     style="width: 100%; aspect-ratio: 16 / 9; background-color: #121215; border-radius: 16px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); overflow: hidden; position: relative;">
+                    <video autoplay loop muted playsinline 
+                           style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block;">
+                        <source src="moderna-trident.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Rejilla de 3 Tarjetas de Impacto (3 Columnas en Desktop) -->
+            <div class="thesis-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                
+                <!-- Tarjeta 1: Alianza Estratégica con Merck / MSD -->
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2.5rem; transition: all 0.4s ease; text-align: left;" class="thesis-card">
+                    <div style="display: inline-block; padding: 0.3rem 0.8rem; border-radius: 50px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; color: #f59e0b; text-transform: uppercase; margin-bottom: 1.25rem;">
+                        ALIANZA COMERCIAL
+                    </div>
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem; line-height: 1.3;">
+                        Co-desarrollo con Merck (MSD)
+                    </h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                        Reparto de beneficios al 50% con el gigante farmacéutico creador de Keytruda, asegurando la red de distribución mundial más potente del sector oncológico.
+                    </p>
+                </div>
+
+                <!-- Tarjeta 2: Personalización por IA -->
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2.5rem; transition: all 0.4s ease; text-align: left;" class="thesis-card">
+                    <div style="display: inline-block; padding: 0.3rem 0.8rem; border-radius: 50px; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; color: #06b6d4; text-transform: uppercase; margin-bottom: 1.25rem;">
+                        MOTOR DE IA
+                    </div>
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem; line-height: 1.3;">
+                        Secuenciación en Tiempo Récord
+                    </h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                        Algoritmos de IA que analizan las mutaciones únicas del tumor de cada paciente para diseñar y fabricar una vacuna personalizada en menos de 6 semanas.
+                    </p>
+                </div>
+
+                <!-- Tarjeta 3: Escalabilidad de Plataforma -->
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2.5rem; transition: all 0.4s ease; text-align: left;" class="thesis-card">
+                    <div style="display: inline-block; padding: 0.3rem 0.8rem; border-radius: 50px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; color: #60a5fa; text-transform: uppercase; margin-bottom: 1.25rem;">
+                        EFECTO MULTIPLICADOR
+                    </div>
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 1rem; line-height: 1.3;">
+                        Plataforma Multi-Indicación
+                    </h3>
+                    <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                        La misma tecnología de mRNA probada en melanoma se está extendiendo a ensayos clínicos activos para cáncer de pulmón, páncreas y enfermedades autoinmunes.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 4: TESIS FINANCIERA Y OPORTUNIDAD ASIMÉTRICA               -->
+    <!-- ================================================================= -->
+    <section id="tesis-financiera" class="section-dark border-top" style="background: #09090b; padding: 6rem 0; position: relative; overflow: hidden; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container two-column-grid" style="align-items: center; gap: 4rem;">
+            
+            <!-- Columna Izquierda (Contenido Financiero y Puntos Clave) -->
+            <div class="fade-in-up" style="text-align: left;">
+                
+                <!-- Eyebrow Badge -->
+                <div class="hero-badge-spacex">
+                    <span class="badge-dot-pulse"></span>
+                    <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; color: #06b6d4; text-transform: uppercase;">
+                        VALORACIÓN DE MERCADO Y TIMING
+                    </span>
+                </div>
+
+                <!-- H2 (Titular) -->
+                <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; line-height: 1.25; color: #ffffff; margin-bottom: 1.5rem; text-align: left;">
+                    Una ventana de entrada estratégica tras la <span class="gradient-gold-text">corrección del sector</span>
+                </h2>
+
+                <!-- Texto Introductorio -->
+                <p style="color: var(--color-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 2rem; max-width: 600px;">
+                    Tras la normalización de los ingresos post-pandemia, la valoración en bolsa de la compañía ha absorbido la corrección del mercado, permitiendo tomar posición en el pipeline de oncología a múltiplos sumamente atractivos.
+                </p>
+
+                <!-- Lista de 3 Puntos Clave -->
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    <!-- Punto 1 -->
+                    <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: #06b6d4; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: bold; flex-shrink: 0; margin-top: 2px;">
+                            ✓
+                        </div>
+                        <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            <strong style="color: #ffffff; font-weight: 600;">Caja Fuerte y Balance Sólido:</strong> Reservas líquidas de miles de millones de dólares para financiar la I+D de los ensayos de oncología sin recurrir a deuda agresiva ni diluir a los accionistas.
+                        </p>
+                    </li>
+
+                    <!-- Punto 2 -->
+                    <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: bold; flex-shrink: 0; margin-top: 2px;">
+                            ✓
+                        </div>
+                        <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            <strong style="color: #ffffff; font-weight: 600;">Transición de Modelo de Negocio:</strong> Evolución estratégica desde ingresos de emergencia hacia un modelo recurrente en oncología de alto margen con protección de patentes por más de una década.
+                        </p>
+                    </li>
+
+                    <!-- Punto 3 -->
+                    <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: #06b6d4; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: bold; flex-shrink: 0; margin-top: 2px;">
+                            ✓
+                        </div>
+                        <p style="color: var(--color-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            <strong style="color: #ffffff; font-weight: 600;">Catalizadores Regulatorios Inminentes:</strong> La proximidad de los resultados definitivos de Fase 3 y solicitudes de aprobación comercial representan eventos de alta revalorización a medio plazo.
+                        </p>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Columna Derecha (Video Multimedia Animación Autoplay) -->
+            <div class="col-visual fade-in-up delay-1" style="display: flex; align-items: center; justify-content: flex-end; width: 100%;">
+                <div id="valuation-graphic-placeholder" 
+                     style="width: 100%; max-width: 600px; aspect-ratio: 16 / 9; background-color: #121215; border-radius: 16px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); overflow: hidden; position: relative;">
+                    <video autoplay loop muted playsinline 
+                           style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block;">
+                        <source src="moderna-valuation.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 5: CIERRE Y FORMULARIO DE CAPTURA                         -->
+    <!-- ================================================================= -->
+    
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 5: CIERRE Y FORMULARIO DE CAPTURA (CENTRADO)             -->
+    <!-- ================================================================= -->
+    <section id="contacto" class="section-dark border-top" style="background: #000000; padding: 6rem 0; position: relative; overflow: hidden; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        
+        <!-- Glow Orbs Ambientales Centrados -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] glow-bg-gold pointer-events-none z-0 opacity-20"></div>
+
+        <div class="container" style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+            
+            <!-- Tarjeta Contenedora de Alta Conversión Centrada -->
+            <div class="fade-in-up" style="text-align: center; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 3rem 2.5rem; backdrop-filter: blur(12px); max-width: 680px; margin: 0 auto; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(245, 158, 11, 0.08);">
+                
+                <!-- Eyebrow Badge -->
+                <div class="hero-badge-spacex" style="background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.3); margin-left: auto; margin-right: auto;">
+                    <span class="badge-dot-pulse" style="background-color: #f59e0b; box-shadow: 0 0 10px #f59e0b;"></span>
+                    <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; color: #f59e0b; text-transform: uppercase;">
+                        ACCESO EXCLUSIVO A INVERSORES
+                    </span>
+                </div>
+
+                <!-- H2 (Titular) -->
+                <h2 class="section-title" style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.25; color: #ffffff; margin-bottom: 1rem; text-align: center;">
+                    Recibe la Tesis Completa de Inversión en <span class="gradient-cyan-text">Moderna</span>
+                </h2>
+
+                <!-- Subtítulo -->
+                <p style="color: var(--color-muted); font-size: 1rem; line-height: 1.6; margin: 0 auto 2.5rem auto; max-width: 540px; text-align: center;">
+                    Accede al análisis detallado de Simple Invest sobre la valoración del pipeline de oncología, proyecciones de flujo de caja y estrategia de incorporación en cartera.
+                </p>
+
+                <!-- Formulario -->
+                <form action="gracias.html" method="GET" style="display: flex; flex-direction: column; gap: 1.25rem; text-align: left; max-width: 520px; margin: 0 auto;">
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #cbd5e1; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px;">Nombre completo</label>
+                        <input type="text" name="nombre" required placeholder="Ej. Carlos Mendoza" 
+                               style="width: 100%; padding: 0.85rem 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none; transition: border-color 0.3s;"
+                               onfocus="this.style.borderColor=\x27#06b6d4\x27" onblur="this.style.borderColor=\x27rgba(255, 255, 255, 0.12)\x27">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #cbd5e1; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px;">Correo electrónico profesional</label>
+                        <input type="email" name="email" required placeholder="carlos\@empresa.com" 
+                               style="width: 100%; padding: 0.85rem 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none; transition: border-color 0.3s;"
+                               onfocus="this.style.borderColor=\x27#06b6d4\x27" onblur="this.style.borderColor=\x27rgba(255, 255, 255, 0.12)\x27">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #cbd5e1; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px;">Teléfono / WhatsApp</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <select name="codigo_pais" style="padding: 0.85rem 0.75rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; color: #ffffff; font-size: 0.9rem; outline: none;">
+                                <option value="+56" style="background: #111;">🇨🇱 +56</option>
+                                <option value="+593" style="background: #111;">🇪🇨 +593</option>
+                                <option value="+1" style="background: #111;">🇺🇸 +1</option>
+                                <option value="+52" style="background: #111;">🇲🇽 +52</option>
+                                <option value="+57" style="background: #111;">🇨🇴 +57</option>
+                                <option value="+51" style="background: #111;">🇵🇪 +51</option>
+                            </select>
+                            <input type="tel" name="telefono" required placeholder="9 1234 5678" 
+                                   style="flex: 1; padding: 0.85rem 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none; transition: border-color 0.3s;"
+                                   onfocus="this.style.borderColor=\x27#06b6d4\x27" onblur="this.style.borderColor=\x27rgba(255, 255, 255, 0.12)\x27">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-spacex-glow" style="width: 100%; justify-content: center; margin-top: 0.5rem; cursor: pointer;">
+                        <span>Solicitar Reporte y Asesoría Privada</span>
+                        <span style="font-size: 1.2rem; line-height: 1;">→</span>
+                    </button>
+                </form>
+
+                <!-- Texto de Garantía -->
+                <p style="font-size: 0.8rem; color: #94a3b8; text-align: center; margin-top: 1.5rem; margin-bottom: 0;">
+                    Privacidad garantizada • Análisis institucional 100% gratuito • Sin compromiso
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- FOOTER / PIE DE PÁGINA                                            -->
+    <!-- ================================================================= -->
+    <footer style="background: #000000; padding: 3rem 0; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center;">
+        <div class="container">
+            <p style="font-size: 0.85rem; color: #71717a; margin: 0; line-height: 1.5;">
+                © 2026 Simple Invest. Gestión patrimonial y análisis de inversiones estratégicas.
+            </p>
+        </div>
+    </footer>
+
+
+
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('video').forEach(function(v) {
+                v.muted = true;
+                v.play().catch(function(err) { console.log('Autoplay trigger:', err); });
+            });
+        });
+    </script>
+</body>
+</html>
