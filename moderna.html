@@ -493,18 +493,19 @@
 
                     <div>
                         <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #cbd5e1; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px;">Teléfono / WhatsApp</label>
-                        <div style="display: flex; gap: 0.5rem;">
-                            <select name="codigo_pais" style="padding: 0.85rem 0.75rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; color: #ffffff; font-size: 0.9rem; outline: none;">
+                        <div class="phone-input-group" style="display: flex; gap: 0.5rem; width: 100%; align-items: center;">
+                            <select id="country-code" name="codigo_pais" required class="country-select" 
+                                    style="width: 110px; min-width: 100px; max-width: 115px; flex-shrink: 0; padding: 0.85rem 0.5rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; color: #ffffff; font-size: 0.9rem; outline: none; cursor: pointer;">
+                                <option value="+57" selected style="background: #111;">🇨🇴 +57</option>
                                 <option value="+56" style="background: #111;">🇨🇱 +56</option>
                                 <option value="+593" style="background: #111;">🇪🇨 +593</option>
                                 <option value="+1" style="background: #111;">🇺🇸 +1</option>
                                 <option value="+52" style="background: #111;">🇲🇽 +52</option>
-                                <option value="+57" style="background: #111;">🇨🇴 +57</option>
                                 <option value="+51" style="background: #111;">🇵🇪 +51</option>
                             </select>
-                            <input type="tel" name="telefono" required placeholder="9 1234 5678" 
-                                   style="flex: 1; padding: 0.85rem 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none; transition: border-color 0.3s;"
-                                   onfocus="this.style.borderColor=\x27#06b6d4\x27" onblur="this.style.borderColor=\x27rgba(255, 255, 255, 0.12)\x27">
+                            <input type="tel" id="phone" name="telefono" required placeholder="9 1234 5678" class="phone-input-field"
+                                   style="flex: 1; width: 100%; padding: 0.85rem 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; color: #ffffff; font-size: 0.95rem; outline: none; transition: border-color 0.3s;"
+                                   onfocus="this.style.borderColor='#06b6d4'" onblur="this.style.borderColor='rgba(255, 255, 255, 0.12)'">
                         </div>
                     </div>
 
