@@ -472,7 +472,11 @@
                 </p>
 
                 <!-- Formulario -->
-                <form action="gracias.html" method="GET" style="display: flex; flex-direction: column; gap: 1.25rem; text-align: left; max-width: 520px; margin: 0 auto;">
+                <form id="contact-form" class="elegant-form" action="https://formsubmit.co/f5mediasocial@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem; text-align: left; max-width: 520px; margin: 0 auto;">
+                    <input type="hidden" name="_subject" value="Nueva consulta de inversión - Moderna">
+                    <input type="hidden" name="_cc" value="octaviogswedencap@gmail.com,correa.felipe.1899@gmail.com">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <div>
                         <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #cbd5e1; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px;">Nombre completo</label>
                         <input type="text" name="nombre" required placeholder="Ej. Carlos Mendoza" 
