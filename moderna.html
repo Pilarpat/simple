@@ -98,6 +98,51 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* MOBILE ORDERING & RESPONSIVE LAYOUT OVERRIDES */
+        @media (max-width: 768px) {
+            /* Section 1: Hero Video first on Mobile */
+            .hero-spacex .hero-grid {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .hero-spacex .hero-grid .col-visual {
+                order: -1 !important;
+                margin-bottom: 2rem !important;
+                justify-content: center !important;
+                width: 100% !important;
+            }
+            .hero-spacex .hero-grid .col-visual #hero-graphic-placeholder {
+                max-width: 100% !important;
+                margin: 0 auto;
+            }
+            .hero-spacex .hero-grid .hero-text {
+                order: 1 !important;
+                width: 100% !important;
+                text-align: left;
+            }
+
+            /* Section 3: Catalizador - Text ABOVE 4 Cards on Mobile */
+            #catalizador .two-column-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 2.5rem !important;
+            }
+            #catalizador .two-column-grid > div:nth-child(2) {
+                order: 1 !important;
+                width: 100% !important;
+            }
+            #catalizador .two-column-grid > div:nth-child(1) {
+                order: 2 !important;
+                width: 100% !important;
+            }
+
+            /* Section 4: Tridente - Cards Full-Width & Stacked Vertically */
+            .thesis-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -174,22 +219,424 @@
 
             </div>
 
-            <!-- Columna Derecha (Video Multimedia Animación Autoplay) -->
+            <!-- Columna Derecha (Video Multimedia con Reproducción Automática y Audio) -->
             <div class="col-visual fade-in-up delay-1" style="display: flex; align-items: center; justify-content: flex-end; width: 100%;">
                 <div id="hero-graphic-placeholder" 
-                     style="width: 100%; max-width: 600px; aspect-ratio: 16 / 9; background-color: #121215; border-radius: 16px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); overflow: hidden; position: relative;">
-                    <video autoplay loop muted playsinline 
-                           style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block;">
-                        <source src="moderna-hero.mp4" type="video/mp4">
+                     style="width: 100%; max-width: 410px; background-color: #121215; border-radius: 16px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); overflow: hidden; position: relative; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <video id="hero-audio-video" autoplay loop muted playsinline controls
+                           style="width: 100%; height: auto; display: block; border-radius: 16px; object-fit: contain;">
+                        <source src="moderna-hero-2.mp4" type="video/mp4">
                     </video>
+                    <!-- Badge Flotante para Control / Indicador de Audio -->
+                    <button id="audio-toggle-btn" type="button"
+                            style="position: absolute; bottom: 12px; right: 12px; z-index: 10; background: rgba(9, 9, 11, 0.9); border: 1px solid rgba(255, 255, 255, 0.3); color: #FFFFFF; padding: 7px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; cursor: pointer; backdrop-filter: blur(8px); display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); transition: all 0.2s ease;">
+                        <span id="audio-btn-icon">🔇</span>
+                        <span id="audio-btn-text">Activar Sonido</span>
+                    </button>
                 </div>
             </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const heroVid = document.getElementById('hero-audio-video');
+                    const audioBtn = document.getElementById('audio-toggle-btn');
+                    const audioIcon = document.getElementById('audio-btn-icon');
+                    const audioText = document.getElementById('audio-btn-text');
+
+                    if (heroVid) {
+                        heroVid.muted = true;
+                        heroVid.play().catch(() => {});
+
+                        const updateBtnUI = function() {
+                            if (audioIcon && audioText && audioBtn) {
+                                if (!heroVid.muted) {
+                                    audioIcon.textContent = '🔊';
+                                    audioText.textContent = 'Sonido Activado';
+                                    audioBtn.style.borderColor = 'rgba(0, 240, 255, 0.6)';
+                                    audioBtn.style.color = '#00F0FF';
+                                    audioBtn.style.background = 'rgba(0, 240, 255, 0.15)';
+                                } else {
+                                    audioIcon.textContent = '🔇';
+                                    audioText.textContent = 'Activar Sonido';
+                                    audioBtn.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                                    audioBtn.style.color = '#FFFFFF';
+                                    audioBtn.style.background = 'rgba(9, 9, 11, 0.9)';
+                                }
+                            }
+                        };
+
+                        if (audioBtn) {
+                            audioBtn.addEventListener('click', function(e) {
+                                e.stopPropagation();
+                                if (heroVid.muted) {
+                                    heroVid.muted = false;
+                                    heroVid.volume = 1.0;
+                                    heroVid.play().catch(() => {});
+                                } else {
+                                    heroVid.muted = true;
+                                }
+                                updateBtnUI();
+                            });
+                        }
+                    }
+                });
+            </script>
 
         </div>
     </section>
 
     <!-- ================================================================= -->
-    <!-- SECCIÓN 2: ESCALA DEL MERCADO Y CATALIZADOR CLÍNICO              -->
+    <!-- SECCIÓN 2: ANÁLISIS TÉCNICO & FUNDAMENTAL                         -->
+    <!-- ================================================================= -->
+    <section id="analisis-tecnico" style="background: #000000; padding: 5rem 1.5rem; position: relative; border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
+        <style>
+            .silent-card {
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                padding: 2rem 1.75rem;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .silent-card:hover {
+                border-color: rgba(0, 240, 255, 0.3);
+                transform: translateY(-4px);
+                box-shadow: 0 12px 30px rgba(0, 240, 255, 0.08);
+            }
+            .chart-card-container {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 16px;
+                padding: 1.5rem;
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+                margin-bottom: 2.5rem;
+            }
+            .timeframe-btn {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: #71717A;
+                padding: 0.35rem 0.85rem;
+                border-radius: 6px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+            .timeframe-btn:hover {
+                color: #FFFFFF;
+                border-color: rgba(255, 255, 255, 0.3);
+            }
+            .timeframe-btn.active {
+                border-color: #00F0FF;
+                color: #00F0FF;
+                background: rgba(0, 240, 255, 0.1);
+                box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+            }
+            @media (max-width: 768px) {
+                .metrics-grid-2col {
+                    grid-template-columns: 1fr !important;
+                }
+                .chart-header-flex {
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                    gap: 1rem !important;
+                }
+                .chart-card-container {
+                    padding: 1.25rem 1rem !important;
+                }
+            }
+        </style>
+        <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
+            
+            <!-- Encabezado de Sección -->
+            <div style="text-align: center; max-width: 840px; margin: 0 auto 3.5rem auto;">
+                <div style="display: inline-block; margin-bottom: 1rem;">
+                    <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #00F0FF; background: rgba(0, 240, 255, 0.06); border: 1px solid rgba(0, 240, 255, 0.2); padding: 0.4rem 1rem; border-radius: 50px;">
+                        ANÁLISIS TÉCNICO & FUNDAMENTAL
+                    </span>
+                </div>
+                <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 800; color: #FFFFFF; line-height: 1.25; margin-bottom: 1.25rem; letter-spacing: -0.02em;">
+                    Acompaña el momentum del mercado antes de la ruptura comercial.
+                </h2>
+                <p style="font-size: 1.05rem; color: #A1A1AA; line-height: 1.7; margin: 0; font-weight: 400;">
+                    La estructura de precio en 2026 confirma una sólida fase de acumulación institucional, registrando un +364% YTD con soporte en niveles clave. Este rendimiento técnico refleja el valor presente de la compañía mientras la vacuna de ARNm contra el cáncer de piel sigue en fase clínica en humanos. La eventual aprobación de la FDA liberará la mayor expansión de múltiples en la historia de la biotecnología.
+                </p>
+                <div style="width: 100%; max-width: 500px; margin: 2rem auto 0 auto; aspect-ratio: 16 / 9; background-color: #121215; border-radius: 16px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); overflow: hidden; position: relative; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block;">
+                        <source src="moderna-hero.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Grid de 2 Tarjetas Alineadas -->
+            <div class="metrics-grid-2col" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem; margin-bottom: 2.5rem;">
+                
+                <!-- Card 1 -->
+                <div class="silent-card">
+                    <div style="font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: #00F0FF; line-height: 1.1; margin-bottom: 0.75rem; letter-spacing: -0.03em;">
+                        +364% YTD
+                    </div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.5rem; letter-spacing: -0.01em;">
+                        Tendencia Alcista Confirmada
+                    </h3>
+                    <p style="font-size: 0.925rem; color: #A1A1AA; line-height: 1.6; margin: 0;">
+                        Breakout técnico consolidado con volumen comprador institucional ascendente durante 2026.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="silent-card">
+                    <div style="font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: #D4AF37; line-height: 1.1; margin-bottom: 0.75rem; letter-spacing: -0.03em;">
+                        2.5x – 4.0x
+                    </div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.5rem; letter-spacing: -0.01em;">
+                        Proyección de Valorización
+                    </h3>
+                    <p style="font-size: 0.925rem; color: #A1A1AA; line-height: 1.6; margin: 0;">
+                        Ratio de retorno/riesgo asimétrico ante la transición de etapa clínica a monetización masiva.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Componente de Gráfico Interactivo de Acción de Moderna (MRNA) -->
+            <div class="chart-card-container">
+                
+                <!-- Header del Gráfico -->
+                <div class="chart-header-flex" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; color: #A1A1AA; text-transform: uppercase; margin-bottom: 0.35rem;">
+                            MODERNA INC. (NASDAQ: MRNA)
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+                            <span id="mrna-current-price" style="font-size: 1.85rem; font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em;">
+                                $184.50 USD
+                            </span>
+                            <span style="background: rgba(0, 255, 171, 0.12); border: 1px solid rgba(0, 255, 171, 0.3); color: #00FFAB; padding: 0.3rem 0.75rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 4px;">
+                                📈 +364.0% YTD 2026
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Selector de Temporalidad -->
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <button class="timeframe-btn" onclick="updateMrnaChart('1M', this)">1M</button>
+                        <button class="timeframe-btn" onclick="updateMrnaChart('3M', this)">3M</button>
+                        <button class="timeframe-btn active" onclick="updateMrnaChart('YTD', this)">YTD 2026</button>
+                    </div>
+                </div>
+
+                <!-- Canvas del Gráfico Chart.js -->
+                <div style="position: relative; width: 100%; height: 340px;">
+                    <canvas id="mrnaChartCanvas"></canvas>
+                </div>
+
+                <!-- Leyendas de Hitos Fijos / Anotaciones debajo del gráfico -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.04);">
+                    <div style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                        <span style="width: 10px; height: 10px; border-radius: 50%; background: #00F0FF; margin-top: 4px; flex-shrink: 0; box-shadow: 0 0 8px #00F0FF;"></span>
+                        <div>
+                            <div style="font-size: 0.75rem; font-weight: 700; color: #FFFFFF;">Q1 2026</div>
+                            <div style="font-size: 0.75rem; color: #A1A1AA;">Acumulación Institucional</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                        <span style="width: 10px; height: 10px; border-radius: 50%; background: #D4AF37; margin-top: 4px; flex-shrink: 0; box-shadow: 0 0 10px #D4AF37;"></span>
+                        <div>
+                            <div style="font-size: 0.75rem; font-weight: 700; color: #D4AF37;">Q2 2026 (Hito Clave)</div>
+                            <div style="font-size: 0.75rem; color: #A1A1AA;">Inicio Ensayos Fase 3 mRNA-4157</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                        <span style="width: 10px; height: 10px; border-radius: 50%; background: #00FFAB; margin-top: 4px; flex-shrink: 0; box-shadow: 0 0 8px #00FFAB;"></span>
+                        <div>
+                            <div style="font-size: 0.75rem; font-weight: 700; color: #00FFAB;">Q3 2026 (Actual)</div>
+                            <div style="font-size: 0.75rem; color: #A1A1AA;">Consolidación en Máximos YTD</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer del Gráfico -->
+                <div style="margin-top: 1.25rem; text-align: right;">
+                    <span style="font-size: 10px; color: #52525B;">
+                        Fuente: Datos de mercado YTD 2026. Rendimientos pasados no garantizan retornos futuros.
+                    </span>
+                </div>
+            </div>
+
+            <!-- Cierre de Sección (Footer de Sección) -->
+            <div style="text-align: center;">
+                <p style="font-size: 0.875rem; color: #71717A; font-style: italic; margin: 0; letter-spacing: 0.02em;">
+                    Estructura técnica sólida con un catalizador fundamental único en la década.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Script de Inicialización de Chart.js para MRNA -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('mrnaChartCanvas').getContext('2d');
+
+            const chartDatasets = {
+                'YTD': {
+                    labels: ['Ene 2026', 'Feb 2026', 'Mar 2026', 'Abr 2026', 'May 2026', 'Jun 2026', 'Jul 2026', 'Ago 2026', 'Sep 2026'],
+                    prices: [39.75, 44.20, 58.60, 82.30, 118.90, 142.10, 165.40, 174.80, 184.50],
+                    milestones: { 0: 'Acumulación Institucional', 4: 'Inicio Ensayos Fase 3 mRNA-4157', 8: 'Consolidación en Máximos YTD' }
+                },
+                '3M': {
+                    labels: ['Jul 2026', 'Jul 15', 'Ago 01', 'Ago 15', 'Sep 01', 'Sep 15', 'Sep 2026'],
+                    prices: [155.00, 162.30, 168.90, 172.40, 176.80, 181.20, 184.50],
+                    milestones: { 0: 'Consolidación', 6: 'Consolidación en Máximos YTD' }
+                },
+                '1M': {
+                    labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4', 'Actual'],
+                    prices: [173.20, 176.50, 179.80, 182.10, 184.50],
+                    milestones: { 4: 'Consolidación en Máximos YTD' }
+                }
+            };
+
+            const gradientFill = ctx.createLinearGradient(0, 0, 0, 300);
+            gradientFill.addColorStop(0, 'rgba(0, 240, 255, 0.28)');
+            gradientFill.addColorStop(0.7, 'rgba(0, 255, 171, 0.05)');
+            gradientFill.addColorStop(1, 'rgba(0, 0, 0, 0.0)');
+
+            const getYtdPointColors = (len) => {
+                const bgColors = Array(len).fill('rgba(0, 240, 255, 0.4)');
+                const borderColors = Array(len).fill('#00F0FF');
+                const pointRadius = Array(len).fill(4);
+
+                bgColors[0] = '#00F0FF';
+                borderColors[0] = '#FFFFFF';
+                pointRadius[0] = 6;
+
+                bgColors[4] = '#D4AF37';
+                borderColors[4] = '#FFFFFF';
+                pointRadius[4] = 8;
+
+                bgColors[8] = '#00FFAB';
+                borderColors[8] = '#FFFFFF';
+                pointRadius[8] = 7;
+
+                return { bgColors, borderColors, pointRadius };
+            };
+
+            const pointConfig = getYtdPointColors(chartDatasets['YTD'].prices.length);
+
+            window.mrnaChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: chartDatasets['YTD'].labels,
+                    datasets: [{
+                        label: 'Precio MRNA (USD)',
+                        data: chartDatasets['YTD'].prices,
+                        borderColor: '#00F0FF',
+                        borderWidth: 3,
+                        backgroundColor: gradientFill,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: pointConfig.bgColors,
+                        pointBorderColor: pointConfig.borderColors,
+                        pointBorderWidth: 2,
+                        pointRadius: pointConfig.pointRadius,
+                        pointHoverRadius: 9,
+                        pointHoverBackgroundColor: '#00FFAB',
+                        pointHoverBorderColor: '#FFFFFF'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            enabled: true,
+                            backgroundColor: '#09090B',
+                            titleColor: '#A1A1AA',
+                            bodyColor: '#00FFAB',
+                            borderColor: 'rgba(255, 255, 255, 0.15)',
+                            borderWidth: 1,
+                            padding: 12,
+                            displayColors: false,
+                            titleFont: { size: 11, family: 'Inter, sans-serif' },
+                            bodyFont: { size: 14, weight: 'bold', family: 'Inter, sans-serif' },
+                            callbacks: {
+                                label: function(context) {
+                                    const price = context.parsed.y;
+                                    const initialPrice = 39.75;
+                                    const pct = (((price - initialPrice) / initialPrice) * 100).toFixed(1);
+                                    const sign = pct >= 0 ? '+' : '';
+                                    return `$${price.toFixed(2)} USD (${sign}${pct}%)`;
+                                },
+                                afterLabel: function(context) {
+                                    const activeSet = window.currentMrnaTimeframe || 'YTD';
+                                    const ms = chartDatasets[activeSet].milestones;
+                                    if (ms && ms[context.dataIndex]) {
+                                        return '📌 ' + ms[context.dataIndex];
+                                    }
+                                    return '';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                color: '#71717A',
+                                font: { size: 11, family: 'Inter, sans-serif' }
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.04)',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                color: '#71717A',
+                                font: { size: 11, family: 'Inter, sans-serif' },
+                                callback: function(value) { return '$' + value; }
+                            }
+                        }
+                    }
+                }
+            });
+
+            window.currentMrnaTimeframe = 'YTD';
+
+            window.updateMrnaChart = function (tf, btn) {
+                document.querySelectorAll('.timeframe-btn').forEach(b => b.classList.remove('active'));
+                if (btn) btn.classList.add('active');
+
+                window.currentMrnaTimeframe = tf;
+                const dataObj = chartDatasets[tf];
+
+                window.mrnaChart.data.labels = dataObj.labels;
+                window.mrnaChart.data.datasets[0].data = dataObj.prices;
+
+                if (tf === 'YTD') {
+                    const cfg = getYtdPointColors(dataObj.prices.length);
+                    window.mrnaChart.data.datasets[0].pointBackgroundColor = cfg.bgColors;
+                    window.mrnaChart.data.datasets[0].pointBorderColor = cfg.borderColors;
+                    window.mrnaChart.data.datasets[0].pointRadius = cfg.pointRadius;
+                } else {
+                    window.mrnaChart.data.datasets[0].pointBackgroundColor = '#00F0FF';
+                    window.mrnaChart.data.datasets[0].pointBorderColor = '#FFFFFF';
+                    window.mrnaChart.data.datasets[0].pointRadius = 4;
+                }
+
+                window.mrnaChart.update();
+            };
+        });
+    </script>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 3: ESCALA DEL MERCADO Y CATALIZADOR CLÍNICO              -->
     <!-- ================================================================= -->
     <section id="catalizador" class="section-dark border-top" style="background: #09090b; padding: 6rem 0; position: relative; overflow: hidden; border-top: 1px solid rgba(255, 255, 255, 0.05);">
         <div class="container two-column-grid" style="align-items: center; gap: 4rem;">
